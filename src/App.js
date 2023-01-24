@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import './App.css';
+import { Controls } from './Components/Controls/Controls';
 import { WordList } from './Components/WordList/WordList';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       </Row>
       <Row >
         <Col>
-          <WordList />
+          <Controls />
         </Col>
       </Row>
     </Container>

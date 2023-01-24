@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.easy {
+  color: green;
+}
+
+.med {
+  color: rgb(194, 169, 28);
+}
+
+.hard {
+  color: red;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
