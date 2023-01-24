@@ -35,8 +35,8 @@ export function WordList(props) {
 
   return (
     <Card>
+      <Card.Header as="h2">{targetWord}</Card.Header>
       <Card.Body>
-        <Card.Title>{targetWord}</Card.Title>
         {words.map((word, index) => <Card.Text key={index}>{word.word}</Card.Text>)}
         {/* want to add hover over definitions */}
       </Card.Body>
