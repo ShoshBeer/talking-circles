@@ -5,6 +5,7 @@ Related words:
 Target words:
 -add field to input target word manually
 -add way to upload list of vocabulary words to select target words from
+-make sure there are 10 related words?
 
 General:
 -add instructions

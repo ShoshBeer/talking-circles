@@ -12,7 +12,7 @@ function App() {
           <h1>Talking in Circles</h1>
         </Col>
       </Row>
-      <Row >
+      <Row className='padding-top-10'>
         <Col>
           <Controls />
         </Col>
