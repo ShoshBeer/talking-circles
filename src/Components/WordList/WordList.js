@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Accordion, Button, Card, OverlayTrigger, Popover } from "react-bootstrap";
 
-export function WordList({targetWord, wordDifficulty}) {
+export function WordList({targetWord, wordDifficulty, numberOfWords}) {
   const [words, setWords] = useState([]);
   
   useEffect(() => {
@@ -38,7 +38,7 @@ export function WordList({targetWord, wordDifficulty}) {
           <Card.Header style={{cursor: 'pointer'}} as="h2" className={wordDifficulty}>{targetWord.LEMMA}</Card.Header>
       </OverlayTrigger> }
       <Card.Body>
-        {words.slice(1).map((word, index) => {
+        {words.slice(1, Number(numberOfWords) + 1).map((word, index) => {
           return (
           <Accordion key={index}>
             <Accordion.Item eventKey={index}>

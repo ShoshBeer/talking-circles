@@ -8,9 +8,11 @@ Target words:
 -add way to upload list of vocabulary words to select target words from
 
 General:
+-add instructions
 -add language selector
 -add support for Spanish (to start)
--add click or hover over definitions for target word and related words
+-add click or hover over definitions for target word and related words (make popover for target word responsive)
 -add control to disable definitions
 -add control for number of related words
--users can indicate if they were successful for a given word and the card (or score) gets saved for viewing later
+-users can indicate if they were successful for a given word and the card (or score) gets saved for viewing later (with react router?)
+-option to display timer that logs the time the card was displayed

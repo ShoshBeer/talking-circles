@@ -11,12 +11,15 @@ export function Controls() {
   const [easyWords, setEasyWords] = useState(true);
   const [medWords, setMedWords] = useState(false);
   const [hardWords, setHardWords] = useState(false);
+  const [numberOfWords, setNumberOfWords] = useState(5);
 
   const randomWordList = frequentWords.filter((word) => ['v', 'n', 'r', 'j'].includes(word.POS));
 
   const handleEasyCheck = () => setEasyWords(!easyWords);
   const handleMedCheck = () => setMedWords(!medWords);
   const handleHardCheck = () => setHardWords(!hardWords);
+
+  const handleNumberChange = (e) => setNumberOfWords(e.target.value);
 
   const selectRandomEnglishWord = (easy, med, hard) => {
     //difficulty would relate to both length/rarity, but also to concrete vs abstract concepts
@@ -76,9 +79,44 @@ export function Controls() {
             </Form>
           </Col>
         </Row>
+        <Row>
+          <Col>
+            <h3>Choose how many restricted words:</h3>
+            <Row>
+              <Col>
+                <input 
+                  type='range'
+                  min='0'
+                  max='10'
+                  orient='vertical'
+                  list='markers'
+                  onChange={(e) => handleNumberChange(e)}
+                  value={numberOfWords}
+                />
+              </Col>
+              <Col style={{alignItems: 'center', display: 'flex'}}>
+                {numberOfWords === '1' ? <p><b>{numberOfWords} restricted word</b></p> : <p><b>{numberOfWords} restricted words</b></p>}
+              </Col>
+            </Row>
+            <datalist id='markers'>
+              <option value='1'></option>
+              <option value='2'></option>
+              <option value='3'></option>
+              <option value='4'></option>
+              <option value='5'></option>
+              <option value='6'></option>
+              <option value='7'></option>
+              <option value='8'></option>
+              <option value='9'></option>
+            </datalist>
+          </Col>
+        </Row>
       </Col>
       <Col xs={12} sm={9} style={{maxWidth: '600px'}}>
-        <WordList targetWord={targetWord} wordDifficulty={wordDifficulty} />
+        <WordList 
+          targetWord={targetWord} 
+          wordDifficulty={wordDifficulty}
+          numberOfWords={numberOfWords} />
       </Col>
     </Row>
   )
