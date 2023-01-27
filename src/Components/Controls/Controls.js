@@ -6,7 +6,7 @@ import frequentWords from '../../Resources/Words_fr_pos.json';
 
 export function Controls() {
 
-  const [targetWord, setTargetWord] = useState('example');
+  const [targetWord, setTargetWord] = useState({LEMMA: 'example'});
   const [wordDifficulty, setWordDifficult] = useState('');
   const [easyWords, setEasyWords] = useState(true);
   const [medWords, setMedWords] = useState(false);
@@ -38,7 +38,7 @@ export function Controls() {
     } else {
       setWordDifficult('hard');
     }
-    setTargetWord(chosenWord.LEMMA);
+    setTargetWord(chosenWord);
   }
 
   return (

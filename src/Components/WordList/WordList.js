@@ -1,12 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Accordion, Card } from "react-bootstrap";
+import { Accordion, Button, Card, OverlayTrigger, Popover } from "react-bootstrap";
 
 export function WordList({targetWord, wordDifficulty}) {
   const [words, setWords] = useState([]);
   
   useEffect(() => {
     const createWordList = async (targetWord, numOfWords = 5) => {
+      //creates a list of words related to the target word
       const responseSyn = await fetch(`https://api.datamuse.com/words?rel_syn=${targetWord}&max=${numOfWords}&md=fd&qe=rel_syn`);
       const responseTrg = await fetch(`https://api.datamuse.com/words?rel_trg=${targetWord}&max=${numOfWords}&md=fd`);
       if (responseSyn.ok) {
@@ -16,20 +17,26 @@ export function WordList({targetWord, wordDifficulty}) {
       if (responseTrg.ok) {
         const synonyms = await responseTrg.json();
         setWords(listOfWords => listOfWords.concat(synonyms));
-        console.log(words);
       }
-      //creates a list of words related to the target word
-      //words should be restricted to same difficulty or easier relative to the target word
-      //words should be in the target language
-      //can modify number of words
-      //later feature: add vocabulary word(s) manually and create cards for them (useful for school settings)
     }
-    createWordList(targetWord);
+    createWordList(targetWord.LEMMA);
   }, [targetWord])
 
   return (
     <Card>
-      <Card.Header as="h2" className={wordDifficulty}>{targetWord}</Card.Header>
+      {words.length === 0 ?
+      <Card.Header as="h2" className={wordDifficulty}>{targetWord.LEMMA}</Card.Header> :
+      <OverlayTrigger
+        trigger="click"
+        placement="right"
+        overlay={
+          <Popover id="target-definition">
+            <Popover.Header>Definition</Popover.Header>
+            <Popover.Body>{words[0].defs.map((target_defs, indexxx) => <li key={indexxx}>{target_defs}</li>)}</Popover.Body>
+          </Popover>
+        }>
+          <Card.Header style={{cursor: 'pointer'}} as="h2" className={wordDifficulty}>{targetWord.LEMMA}</Card.Header>
+      </OverlayTrigger> }
       <Card.Body>
         {words.slice(1).map((word, index) => {
           return (
@@ -45,7 +52,6 @@ export function WordList({targetWord, wordDifficulty}) {
             </Accordion.Item>
           </Accordion> )
         })}
-        {/* want to add hover over definitions */}
       </Card.Body>
     </Card>
   )

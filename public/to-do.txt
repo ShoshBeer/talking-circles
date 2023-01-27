@@ -11,5 +11,6 @@ General:
 -add language selector
 -add support for Spanish (to start)
 -add click or hover over definitions for target word and related words
+-add control to disable definitions
 -add control for number of related words
 -users can indicate if they were successful for a given word and the card (or score) gets saved for viewing later
