@@ -16,7 +16,6 @@ export function WordList({targetWord, wordDifficulty, numberOfWords}) {
       }
       if (responseTrg.ok) {
         const synonyms = await responseTrg.json();
-        console.log(synonyms);
         setWords(listOfWords => listOfWords.concat(synonyms));
       }
       setWords((prevList) => prevList.filter((word, index) =>  index === 0 || !word.word.toLowerCase().includes(targetWord.toLowerCase()))); //filter related words that contain the target word

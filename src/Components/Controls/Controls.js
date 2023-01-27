@@ -7,7 +7,7 @@ import frequentWords from '../../Resources/Words_fr_pos.json';
 export function Controls() {
 
   const [targetWord, setTargetWord] = useState({LEMMA: 'example'});
-  const [wordDifficulty, setWordDifficult] = useState('');
+  const [wordDifficulty, setWordDifficulty] = useState('');
   const [easyWords, setEasyWords] = useState(true);
   const [medWords, setMedWords] = useState(false);
   const [hardWords, setHardWords] = useState(false);
@@ -35,11 +35,11 @@ export function Controls() {
     }
     const chosenWord = wordOptions[Math.floor(Math.random()*wordOptions.length)];
     if (chosenWord.FREQUENCY > 499) {
-      setWordDifficult('easy');
+      setWordDifficulty('text-success');
     } else if (chosenWord.FREQUENCY > 199) {
-      setWordDifficult('med');
+      setWordDifficulty('text-warning');
     } else {
-      setWordDifficult('hard');
+      setWordDifficulty('text-danger');
     }
     setTargetWord(chosenWord);
   }
@@ -73,21 +73,21 @@ export function Controls() {
                 <Form.Check 
                   onChange={() => handleEasyCheck()} 
                   checked={easyWords} 
-                  className="easy" 
+                  className="text-success"
                   type='checkbox'
-                  label='Most common' />
+                  label={<b>Most common</b>} />
                 <Form.Check 
                   onChange={() => handleMedCheck()} 
                   checked={medWords} 
-                  className="med" 
+                  className="text-warning" 
                   type={'checkbox'} 
-                  label={'Very common'} />
+                  label={<b>Very common</b>} />
                 <Form.Check 
                   onChange={() => handleHardCheck()} 
                   checked={hardWords} 
-                  className="hard" 
+                  className="text-danger" 
                   type={'checkbox'} 
-                  label={'Pretty common'} />
+                  label={<b>Pretty common</b>} />
               </Form>
             </Col>
           </Row>

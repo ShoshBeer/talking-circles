@@ -2,18 +2,6 @@
   text-align: center;
 }
 
-.easy {
-  color: green;
-}
-
-.med {
-  color: rgb(194, 169, 28);
-}
-
-.hard {
-  color: red;
-}
-
 .float-left {
   float: left;
 }
@@ -24,6 +12,10 @@
 
 .padding-top-10 {
   padding-top: 10px;
+}
+
+.width-150 {
+  width: 150px;
 }
 
 .App-logo {
