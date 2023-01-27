@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Accordion, Button, Card, OverlayTrigger, Popover } from "react-bootstrap";
+import { Accordion, Card, OverlayTrigger, Popover } from "react-bootstrap";
 
 export function WordList({targetWord, wordDifficulty, numberOfWords}) {
   const [words, setWords] = useState([]);
@@ -12,12 +12,13 @@ export function WordList({targetWord, wordDifficulty, numberOfWords}) {
       const responseTrg = await fetch(`https://api.datamuse.com/words?rel_trg=${targetWord}&max=${numOfWords}&md=fd`);
       if (responseSyn.ok) {
         const relatedWords = await responseSyn.json();
-        setWords(relatedWords);
+        setWords(relatedWords.filter((word, index) => index === 0 || !word.word.toLowerCase().includes(targetWord.toLowerCase()))); //filter related words that contain the target word
       }
       if (responseTrg.ok) {
         const synonyms = await responseTrg.json();
-        setWords(listOfWords => listOfWords.concat(synonyms));
+        setWords(listOfWords => listOfWords.concat(synonyms.filter(word => !word.word.toLowerCase().includes(targetWord.toLowerCase()))));
       }
+      // setWords((prevList) => prevList.filter((word) => word.word.toLowerCase().includes(targetWord.toLowerCase())));
     }
     createWordList(targetWord.LEMMA);
   }, [targetWord])
@@ -32,6 +33,7 @@ export function WordList({targetWord, wordDifficulty, numberOfWords}) {
         overlay={
           <Popover id="target-definition">
             <Popover.Header>Definition</Popover.Header>
+            {console.log(words)}
             <Popover.Body>{words[0].defs.map((target_defs, indexxx) => <li key={indexxx}>{target_defs}</li>)}</Popover.Body>
           </Popover>
         }>
