@@ -82,33 +82,20 @@ export function Controls() {
         <Row>
           <Col>
             <h3>Choose how many restricted words:</h3>
-            <Row>
+            <Row className="padding-top-10">
               <Col>
+                <label for="easier" className="float-left">Easier</label>
+                <label for="" className="float-right">Harder</label>
                 <input 
                   type='range'
                   min='0'
                   max='10'
-                  orient='vertical'
-                  list='markers'
                   onChange={(e) => handleNumberChange(e)}
                   value={numberOfWords}
                 />
-              </Col>
-              <Col style={{alignItems: 'center', display: 'flex'}}>
-                {numberOfWords === '1' ? <p><b>{numberOfWords} restricted word</b></p> : <p><b>{numberOfWords} restricted words</b></p>}
+                {numberOfWords === '1' ? <p className="padding-top-10"><b>{numberOfWords} restricted word</b></p> : <p className="padding-top-10"><b>{numberOfWords} restricted words</b></p>}
               </Col>
             </Row>
-            <datalist id='markers'>
-              <option value='1'></option>
-              <option value='2'></option>
-              <option value='3'></option>
-              <option value='4'></option>
-              <option value='5'></option>
-              <option value='6'></option>
-              <option value='7'></option>
-              <option value='8'></option>
-              <option value='9'></option>
-            </datalist>
           </Col>
         </Row>
       </Col>

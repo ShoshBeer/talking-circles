@@ -14,8 +14,16 @@
   color: red;
 }
 
-input[type="range"] {
-  appearance: slider-vertical;
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.padding-top-10 {
+  padding-top: 10px;
 }
 
 .App-logo {

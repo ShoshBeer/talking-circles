@@ -1,5 +1,4 @@
 Related words:
--filter related words to remove words containing target word (e.g. 'daughter' has related word 'granddaughter')
 -filter related words to same difficulty or easier as target word
 -change the list generator to get better related words (maybe collect trigger words and synonyms and then sort by score or frequency)
 
@@ -11,8 +10,12 @@ General:
 -add instructions
 -add language selector
 -add support for Spanish (to start)
--add click or hover over definitions for target word and related words (make popover for target word responsive)
+-make popover definition for target word responsive
 -add control to disable definitions
--add control for number of related words
 -users can indicate if they were successful for a given word and the card (or score) gets saved for viewing later (with react router?)
 -option to display timer that logs the time the card was displayed
+
+Done:
+-filter related words to remove words containing target word (e.g. 'daughter' has related word 'granddaughter')
+-add click or hover over definitions for target word and related words 
+-add control for number of related words
