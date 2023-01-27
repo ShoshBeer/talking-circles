@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
+import { Accordion, Card } from "react-bootstrap";
 
 export function WordList({targetWord, wordDifficulty}) {
   const [words, setWords] = useState([]);
@@ -16,6 +16,7 @@ export function WordList({targetWord, wordDifficulty}) {
       if (responseTrg.ok) {
         const synonyms = await responseTrg.json();
         setWords(listOfWords => listOfWords.concat(synonyms));
+        console.log(words);
       }
       //creates a list of words related to the target word
       //words should be restricted to same difficulty or easier relative to the target word
@@ -30,7 +31,20 @@ export function WordList({targetWord, wordDifficulty}) {
     <Card>
       <Card.Header as="h2" className={wordDifficulty}>{targetWord}</Card.Header>
       <Card.Body>
-        {words.slice(1,6).map((word, index) => <Card.Text key={index} style={{}}>{word.word}</Card.Text>)}
+        {words.slice(1).map((word, index) => {
+          return (
+          <Accordion key={index}>
+            <Accordion.Item eventKey={index}>
+              <Accordion.Header>
+                {word.word}
+                {/* {word.tags[0]}, {word.score} */}
+              </Accordion.Header>
+              <Accordion.Body style={{textAlign: 'left'}}>
+                {word.defs.map((def, indexx) => <li key={indexx}>{def}</li>)}
+              </Accordion.Body>
+            </Accordion.Item>
+          </Accordion> )
+        })}
         {/* want to add hover over definitions */}
       </Card.Body>
     </Card>
