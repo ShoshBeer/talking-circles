@@ -96,8 +96,8 @@ export function Controls() {
               <h3>Choose how many restricted words:</h3>
               <Row className="padding-top-10">
                 <Col>
-                  <label for="easier" className="float-left">Easier</label>
-                  <label for="" className="float-right">Harder</label>
+                  <label htmlFor="easier" className="float-left">Easier</label>
+                  <label htmlFor="" className="float-right">Harder</label>
                   <input 
                     type='range'
                     min='0'

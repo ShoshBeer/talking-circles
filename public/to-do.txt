@@ -6,6 +6,7 @@ Target words:
 -add field to input target word manually
 -add way to upload list of vocabulary words to select target words from
 -make sure there are 10 related words?
+-filter duplicate words on list with different forms (e.g. answer and answers, economize and economise)
 
 General:
 -add instructions
@@ -15,6 +16,7 @@ General:
 -add control to disable definitions
 -users can indicate if they were successful for a given word and the card (or score) gets saved for viewing later (with react router?)
 -option to display timer that logs the time the card was displayed
+-minimize help by default on widths < 992px (md and smaller)
 
 Done:
 -filter related words to remove words containing target word (e.g. 'daughter' has related word 'granddaughter')
