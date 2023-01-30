@@ -1,8 +1,9 @@
-import { useState } from "react";
 import { Row, Col, Button } from "react-bootstrap";
+import { addPass, addFail } from "./GameSlice";
+
 
 export function Game(props) {
-  const [record, setRecord] = useState({pass: [], fail: []});
+
   return (
     <Row>
       <Col>

@@ -3,10 +3,13 @@ import { Row, Col, Button, Form } from "react-bootstrap";
 import { WordList } from "../WordList/WordList";
 import { useState } from "react";
 import frequentWords from '../../Resources/Words_fr_pos.json';
+import { useDispatch, useSelector } from "react-redux";
+import { selectTargetWord, newTargetWord } from "../Game/GameSlice";
 
 export function Controls() {
-
-  const [targetWord, setTargetWord] = useState({LEMMA: 'example'});
+  const targetWord = useSelector(selectTargetWord);
+  const dispatch = useDispatch();
+  // const [targetWord, setTargetWord] = useState({LEMMA: 'example'});
   const [wordDifficulty, setWordDifficulty] = useState('');
   const [easyWords, setEasyWords] = useState(true);
   const [medWords, setMedWords] = useState(false);
@@ -41,7 +44,7 @@ export function Controls() {
     } else {
       setWordDifficulty('text-danger');
     }
-    setTargetWord(chosenWord);
+    dispatch(newTargetWord(chosenWord));
   }
 
   return (
@@ -54,7 +57,6 @@ export function Controls() {
         </Col>
         <Col xs={12} sm={6} style={{maxWidth: '600px'}}>
           <WordList 
-            targetWord={targetWord} 
             wordDifficulty={wordDifficulty}
             numberOfWords={numberOfWords} />
         </Col>

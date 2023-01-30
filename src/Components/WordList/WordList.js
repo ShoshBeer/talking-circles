@@ -1,31 +1,22 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Accordion, Card, OverlayTrigger, Popover } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchWordList, selectTargetWord } from "../Game/GameSlice";
+import { selectCurrentCard } from "../Game/GameSlice";
 
-export function WordList({targetWord, wordDifficulty, numberOfWords}) {
-  const [words, setWords] = useState([]);
+export function WordList({wordDifficulty, numberOfWords}) {
+  const dispatch = useDispatch();
+  const currentCard = useSelector(selectCurrentCard);
+  const targetWord = useSelector(selectTargetWord);
   
   useEffect(() => {
-    const createWordList = async (targetWord, numOfWords = 5) => {
-      //creates a list of words related to the target word
-      const responseSyn = await fetch(`https://api.datamuse.com/words?rel_syn=${targetWord}&max=${numOfWords}&md=fd&qe=rel_syn`);
-      const responseTrg = await fetch(`https://api.datamuse.com/words?rel_trg=${targetWord}&max=${numOfWords}&md=fd`);
-      if (responseSyn.ok) {
-        const relatedWords = await responseSyn.json();
-        setWords(relatedWords); 
-      }
-      if (responseTrg.ok) {
-        const synonyms = await responseTrg.json();
-        setWords(listOfWords => listOfWords.concat(synonyms));
-      }
-      setWords((prevList) => prevList.filter((word, index) =>  index === 0 || !word.word.toLowerCase().includes(targetWord.toLowerCase()))); //filter related words that contain the target word
-    }
-    createWordList(targetWord.LEMMA);
+    dispatch(fetchWordList());
   }, [targetWord])
 
   return (
     <Card>
-      {words.length === 0 ?
+      {currentCard.length === 0 ?
       <Card.Header as="h2" className={wordDifficulty}>{targetWord.LEMMA}</Card.Header> :
       <OverlayTrigger
         trigger="click"
@@ -33,13 +24,13 @@ export function WordList({targetWord, wordDifficulty, numberOfWords}) {
         overlay={
           <Popover id="target-definition">
             <Popover.Header><i>Definition</i></Popover.Header>
-            <Popover.Body>{words[0].defs.map((target_defs, index) => <li key={index}>{target_defs}</li>)}</Popover.Body>
+            <Popover.Body>{currentCard[0].defs.map((target_defs, index) => <li key={index}>{target_defs}</li>)}</Popover.Body>
           </Popover>
         }>
-          <Card.Header style={{cursor: 'pointer'}} as="h2" className={wordDifficulty}>{targetWord.LEMMA}</Card.Header>
+      <Card.Header style={{cursor: 'pointer'}} as="h2" className={wordDifficulty}>{targetWord.LEMMA}</Card.Header>
       </OverlayTrigger> }
       <Card.Body>
-        {words.slice(1, Number(numberOfWords) + 1).map((word, index) => {
+        {currentCard.slice(1, Number(numberOfWords) + 1).map((word, index) => {
           return (
           <Accordion key={index}>
             <Accordion.Item eventKey={index}>
