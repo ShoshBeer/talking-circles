@@ -1,51 +1,15 @@
 import React from "react";
-import { Row, Col, Button, Form } from "react-bootstrap";
+import { Row, Col, Form } from "react-bootstrap";
 import { WordList } from "../WordList/WordList";
-import { useState } from "react";
-import frequentWords from '../../Resources/Words_fr_pos.json';
 import { useDispatch, useSelector } from "react-redux";
-import { selectTargetWord, newTargetWord } from "../Game/GameSlice";
+import { toggleEasy, toggleMed, toggleHard, changeNumOfRestrictedWords, selectNumOfRestrictedWords, selectIncludeEasy, selectIncludeHard, selectIncludeMed } from "./ControlSlice";
 
 export function Controls() {
-  const targetWord = useSelector(selectTargetWord);
   const dispatch = useDispatch();
-  // const [targetWord, setTargetWord] = useState({LEMMA: 'example'});
-  const [wordDifficulty, setWordDifficulty] = useState('');
-  const [easyWords, setEasyWords] = useState(true);
-  const [medWords, setMedWords] = useState(false);
-  const [hardWords, setHardWords] = useState(false);
-  const [numberOfWords, setNumberOfWords] = useState(5);
-
-  const randomWordList = frequentWords.filter((word) => ['v', 'n', 'r', 'j'].includes(word.POS));
-
-  const handleEasyCheck = () => setEasyWords(!easyWords);
-  const handleMedCheck = () => setMedWords(!medWords);
-  const handleHardCheck = () => setHardWords(!hardWords);
-
-  const handleNumberChange = (e) => setNumberOfWords(e.target.value);
-
-  const selectRandomEnglishWord = (easy, med, hard) => {
-    //difficulty would relate to both length/rarity, but also to concrete vs abstract concepts
-    let wordOptions = [];
-    if (easy) {
-      wordOptions = randomWordList.slice(0, 670);
-    }
-    if (med) {
-      wordOptions = wordOptions.concat(randomWordList.slice(670, 1366));
-    }
-    if (hard) {
-      wordOptions = wordOptions.concat(randomWordList.slice(1366));
-    }
-    const chosenWord = wordOptions[Math.floor(Math.random()*wordOptions.length)];
-    if (chosenWord.FREQUENCY > 499) {
-      setWordDifficulty('text-success');
-    } else if (chosenWord.FREQUENCY > 199) {
-      setWordDifficulty('text-warning');
-    } else {
-      setWordDifficulty('text-danger');
-    }
-    dispatch(newTargetWord(chosenWord));
-  }
+  const numOfRestrictedWords = useSelector(selectNumOfRestrictedWords);
+  const includeEasy = useSelector(selectIncludeEasy);
+  const includeMed = useSelector(selectIncludeMed);
+  const includeHard = useSelector(selectIncludeHard);
 
   return (
       <Row >
@@ -56,44 +20,35 @@ export function Controls() {
           <p>Use the controls to choose how rare the target word can be and the number of restricted words.</p>
         </Col>
         <Col xs={12} sm={6} style={{maxWidth: '600px'}}>
-          <WordList 
-            wordDifficulty={wordDifficulty}
-            numberOfWords={numberOfWords} />
+          <WordList />
         </Col>
         <Col sm={3}>
-          <Row>
-            <Col>
-              <Button className="my-2" onClick={() => selectRandomEnglishWord(easyWords, medWords, hardWords)}>
-                New Word
-              </Button>
-            </Col>
-          </Row>
-          <Row className="my-4">
+          <Row >
             <Col>
               <Form>
                 <Form.Label as='h3'>Select word set: </Form.Label>
                 <Form.Check 
-                  onChange={() => handleEasyCheck()} 
-                  checked={easyWords} 
+                  onChange={() => dispatch(toggleEasy())} 
+                  checked={includeEasy} 
                   className="text-success"
                   type='checkbox'
                   label={<b>Most common</b>} />
                 <Form.Check 
-                  onChange={() => handleMedCheck()} 
-                  checked={medWords} 
+                  onChange={() => dispatch(toggleMed())} 
+                  checked={includeMed} 
                   className="text-warning" 
                   type={'checkbox'} 
                   label={<b>Very common</b>} />
                 <Form.Check 
-                  onChange={() => handleHardCheck()} 
-                  checked={hardWords} 
+                  onChange={() => dispatch(toggleHard())} 
+                  checked={includeHard} 
                   className="text-danger" 
                   type={'checkbox'} 
                   label={<b>Pretty common</b>} />
               </Form>
             </Col>
           </Row>
-          <Row>
+          <Row className="my-4">
             <Col>
               <h3>Choose how many restricted words:</h3>
               <Row className="padding-top-10">
@@ -104,10 +59,10 @@ export function Controls() {
                     type='range'
                     min='0'
                     max='10'
-                    onChange={(e) => handleNumberChange(e)}
-                    value={numberOfWords}
+                    onChange={(e) => dispatch(changeNumOfRestrictedWords(e.target.value))}
+                    value={numOfRestrictedWords}
                   />
-                  {numberOfWords === '1' ? <p className="padding-top-10"><b>{numberOfWords} restricted word</b></p> : <p className="padding-top-10"><b>{numberOfWords} restricted words</b></p>}
+                  {numOfRestrictedWords === '1' ? <p className="padding-top-10"><b>{numOfRestrictedWords} restricted word</b></p> : <p className="padding-top-10"><b>{numOfRestrictedWords} restricted words</b></p>}
                 </Col>
               </Row>
             </Col>

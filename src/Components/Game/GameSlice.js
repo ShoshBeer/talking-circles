@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchWordList = createAsyncThunk(
   'game/fetchWordList',
-  async (numOfWords = 5, { getState }) => {
+  async (numOfWords = 10, { getState }) => {
     const state = getState();
     const targetWord = state.game.targetWord.LEMMA;
     const responseSyn = await fetch(`https://api.datamuse.com/words?rel_syn=${targetWord}&max=${numOfWords}&md=fd&qe=rel_syn`);
@@ -30,11 +30,11 @@ const game = createSlice({
     },
 
     'addPass': (state, action) => {
-      state.pass = [...state, action.payload];
+      state.pass = [...state.pass, action.payload];
     },
 
     'addFail': (state, action) => {
-      state.fail = [...state, action.payload];
+      state.fail = [...state.fail, action.payload];
     }
   },
   extraReducers: (builder) => {

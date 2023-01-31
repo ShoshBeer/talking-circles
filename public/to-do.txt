@@ -1,3 +1,6 @@
+Fix bug:
+-cannot read properties of undefined (reading 'map') error thrown pretty frequently when choosing a new random word. Has happened for sure with 'yeah', 'inform', and I think 'else' and maybe 'glitter' or something.
+
 Related words:
 -filter related words to same difficulty or easier as target word
 -change the list generator to get better related words (maybe collect trigger words and synonyms and then sort by score or frequency)

@@ -2,17 +2,20 @@ import React from "react";
 import { useEffect } from "react";
 import { Accordion, Card, OverlayTrigger, Popover } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { selectNumOfRestrictedWords, selectWordDifficulty } from "../Controls/ControlSlice";
 import { fetchWordList, selectTargetWord } from "../Game/GameSlice";
 import { selectCurrentCard } from "../Game/GameSlice";
 
-export function WordList({wordDifficulty, numberOfWords}) {
+export function WordList() {
   const dispatch = useDispatch();
   const currentCard = useSelector(selectCurrentCard);
   const targetWord = useSelector(selectTargetWord);
+  const wordDifficulty = useSelector(selectWordDifficulty);
+  const numberOfWords = useSelector(selectNumOfRestrictedWords);
   
   useEffect(() => {
     dispatch(fetchWordList());
-  }, [targetWord])
+  }, [targetWord, dispatch])
 
   return (
     <Card>
