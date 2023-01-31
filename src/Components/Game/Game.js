@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, setWordDifficulty } from "../Controls/ControlSlice";
 import { newTargetWord, addPass, addFail, selectTargetWord } from "./GameSlice";
 import frequentWords from '../../Resources/Words_fr_pos.json';
+import { useEffect, useState } from "react";
 
 
 export function Game() {
@@ -11,6 +12,8 @@ export function Game() {
   const includeEasy = useSelector(selectIncludeEasy);
   const includeMed = useSelector(selectIncludeMed);
   const includeHard = useSelector(selectIncludeHard);
+
+  const [seconds, setSeconds] = useState(0);
 
   const randomWordList = frequentWords.filter((word) => ['v', 'n', 'r', 'j'].includes(word.POS));
 
@@ -37,16 +40,36 @@ export function Game() {
     dispatch(newTargetWord(chosenWord));
   }
 
+  const handleHit = () => {
+    dispatch(addPass({word: targetWord, time: seconds}));
+    handleNewWord();
+  }
+
+  const handleMiss = () => {
+    dispatch(addFail(targetWord));
+    handleNewWord();
+  }
+
+  useEffect(() => {
+    setSeconds(0);
+    const intervalID = setInterval(() => {
+      setSeconds((seconds) => seconds + 1);
+    }, 1000);
+    return () => clearInterval(intervalID);
+  }, [targetWord]);
+
   return (
     <Row>
       <Col>
       </Col>
       <Col xs={6}>
-        <Button onClick={() => dispatch(addFail(targetWord))} variant="outline-danger">Miss</Button>
+        <Button onClick={handleMiss} variant="outline-danger">Miss</Button>
         <Button onClick={() => handleNewWord()} className="mx-5" >New Word</Button>
-        <Button onClick={() => dispatch(addPass(targetWord))} variant="outline-success">Hit</Button>
+        <Button onClick={handleHit} variant="outline-success">Hit</Button>
       </Col>
       <Col>
+        <h4>Time: </h4>
+          {seconds > 59? <h4>{Math.floor(seconds/60)}m {seconds%60}s</h4> : <h4>{seconds}s</h4>}
       </Col>
     </Row>
   );

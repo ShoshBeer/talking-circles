@@ -13,16 +13,16 @@ Target words:
 -make only one accordion tab open at a time
 
 General:
--add instructions
 -add language selector
 -add support for Spanish (to start)
--make popover definition for target word responsive
 -add control to disable definitions
 -users can indicate if they were successful for a given word and the card (or score) gets saved for viewing later (with react router?)
 -option to display timer that logs the time the card was displayed
 -minimize help by default on widths < 992px (md and smaller)
 
 Done:
+-add instructions
 -filter related words to remove words containing target word (e.g. 'daughter' has related word 'granddaughter')
 -add click or hover over definitions for target word and related words 
 -add control for number of related words
+-make popover definition for target word responsive (changed to bottom position)
