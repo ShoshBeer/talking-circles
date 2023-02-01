@@ -18,6 +18,7 @@ General:
 -add control to disable definitions
 -users can indicate if they were successful for a given word and the card (or score) gets saved for viewing later (with react router?)
 -option to display timer that logs the time the card was displayed
+-set maximum time for card before it's added to miss and new word is rolled
 -minimize help by default on widths < 992px (md and smaller)
 
 Done:

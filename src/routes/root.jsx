@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import './root.css';
 
 export function Root() {
@@ -10,10 +10,10 @@ export function Root() {
           <nav>
             <h1>Talking in Circles</h1>
             <ul>
-              <li><Link to={`home`}>Home</Link></li>
-              <li><Link to={`play`}>Play</Link></li>
-              <li><Link to={`settings`}>Settings</Link></li>
-              <li><Link to={`score`}>Score</Link></li>
+              <li><NavLink to={`/`}>Instructions</NavLink></li>
+              <li><NavLink to={`play`}>Play</NavLink></li>
+              <li><NavLink to={`settings`}>Settings</NavLink></li>
+              <li><NavLink to={`score`}>Score</NavLink></li>
             </ul>
           </nav>
         </Col>

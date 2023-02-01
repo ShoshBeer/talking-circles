@@ -1,6 +1,5 @@
 import React from "react";
 import { Row, Col, Form } from "react-bootstrap";
-import { WordList } from "../WordList/WordList";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleEasy, toggleMed, toggleHard, changeNumOfRestrictedWords, selectNumOfRestrictedWords, selectIncludeEasy, selectIncludeHard, selectIncludeMed } from "./ControlSlice";
 

@@ -37,7 +37,11 @@ nav a {
 
 nav a:hover {
   color: #61dafb;
-  border: solid 1px #61dafb;
+  font-weight: bolder;
+}
+
+.active {
+  border-bottom: solid 1px #61dafb;
 }
 
 .nav-style {
@@ -88,7 +92,7 @@ h2 {
   font-size: 1.25rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
   nav {
     flex-direction: column;
   }
@@ -98,6 +102,9 @@ h2 {
   }
   nav li {
     padding: 0.5rem 0;
+  }
+  .instructions {
+    font-size: 1rem;
   }
 } 
 

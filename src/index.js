@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, Route, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './errorPage';
 import { Score } from './Components/Score/Score';
 import { Root } from './routes/root';
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "home",
+        index: true,
         element: <Instructions />
       },
       {
