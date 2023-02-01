@@ -12,62 +12,53 @@ export function Controls() {
   const includeHard = useSelector(selectIncludeHard);
 
   return (
-      <Row >
-        <Col sm={3}>
-          <h3>How to Play:</h3>
-          <p>Get the other player(s) to say the word at the top of the card without saying any of the listed words or using any gestures.</p>
-          <p>Click on any word to see its definition.</p>
-          <p>Use the controls to choose how rare the target word can be and the number of restricted words.</p>
-        </Col>
-        <Col xs={12} sm={6} style={{maxWidth: '600px'}}>
-          <WordList />
-        </Col>
-        <Col sm={3}>
-          <Row >
-            <Col>
-              <Form>
-                <Form.Label as='h3'>Select word set: </Form.Label>
-                <Form.Check 
-                  onChange={() => dispatch(toggleEasy())} 
-                  checked={includeEasy} 
-                  className="text-success"
-                  type='checkbox'
-                  label={<b>Most common</b>} />
-                <Form.Check 
-                  onChange={() => dispatch(toggleMed())} 
-                  checked={includeMed} 
-                  className="text-warning" 
-                  type={'checkbox'} 
-                  label={<b>Very common</b>} />
-                <Form.Check 
-                  onChange={() => dispatch(toggleHard())} 
-                  checked={includeHard} 
-                  className="text-danger" 
-                  type={'checkbox'} 
-                  label={<b>Pretty common</b>} />
-              </Form>
-            </Col>
-          </Row>
-          <Row className="my-4">
-            <Col>
-              <h3>Choose how many restricted words:</h3>
-              <Row className="padding-top-10">
-                <Col>
-                  <label htmlFor="easier" className="float-left">Easier</label>
-                  <label htmlFor="" className="float-right">Harder</label>
-                  <input 
-                    type='range'
-                    min='0'
-                    max='10'
-                    onChange={(e) => dispatch(changeNumOfRestrictedWords(e.target.value))}
-                    value={numOfRestrictedWords}
-                  />
-                  {numOfRestrictedWords === '1' ? <p className="padding-top-10"><b>{numOfRestrictedWords} restricted word</b></p> : <p className="padding-top-10"><b>{numOfRestrictedWords} restricted words</b></p>}
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+    <Row className="mt-4" >
+      <Col sm={6}>
+        <Form className="mb-3">
+          <Form.Label as='h3'>Select word set: </Form.Label>
+          <div className="flex">
+            <Form.Check 
+              onChange={() => dispatch(toggleEasy())} 
+              checked={includeEasy} 
+              className="text-success label-width"
+              type='checkbox'
+              label={<b>Most common</b>} />
+            <Form.Check 
+              onChange={() => dispatch(toggleMed())} 
+              checked={includeMed} 
+              className="text-warning label-width" 
+              type={'checkbox'} 
+              label={<b>Very common</b>} />
+            <Form.Check 
+              onChange={() => dispatch(toggleHard())} 
+              checked={includeHard} 
+              className="text-danger label-width" 
+              type={'checkbox'} 
+              label={<b>Pretty common</b>} />
+          </div>
+          <p
+            className={`feedback text-danger ${includeEasy || includeMed || includeHard ? 'none' : 'block'}`}>
+              &gt;Please select at least one set.</p>
+        </Form>
+      </Col>
+      <Col sm={6}>
+        <h3>How many restricted words?</h3>
+        <Row className="pt-1">
+          <Col>
+            <label htmlFor="easier" className="float-left">Easier</label>
+            <input 
+              type='range'
+              min='0'
+              max='10'
+              onChange={(e) => dispatch(changeNumOfRestrictedWords(e.target.value))}
+              value={numOfRestrictedWords}
+              className="mx-3"
+            />
+            <label htmlFor="" className="float-right">Harder</label>
+            {numOfRestrictedWords === '1' ? <p className="pt-1"><b>{numOfRestrictedWords} restricted word</b></p> : <p className="pt-1"><b>{numOfRestrictedWords} restricted words</b></p>}
+          </Col>
+        </Row>
+      </Col>
+    </Row>
   )
 }

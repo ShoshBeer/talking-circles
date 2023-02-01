@@ -1,9 +1,10 @@
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, setWordDifficulty } from "../Controls/ControlSlice";
 import { newTargetWord, addPass, addFail, selectTargetWord } from "./GameSlice";
 import frequentWords from '../../Resources/Words_fr_pos.json';
 import { useEffect, useState } from "react";
+import { WordList } from "../WordList/WordList";
 
 
 export function Game() {
@@ -59,18 +60,40 @@ export function Game() {
   }, [targetWord]);
 
   return (
-    <Row>
-      <Col>
-      </Col>
-      <Col xs={6}>
-        <Button onClick={handleMiss} variant="outline-danger">Miss</Button>
-        <Button onClick={() => handleNewWord()} className="mx-5" >New Word</Button>
-        <Button onClick={handleHit} variant="outline-success">Hit</Button>
-      </Col>
-      <Col>
-        <h4>Time: </h4>
-          {seconds > 59? <h4>{Math.floor(seconds/60)}m {seconds%60}s</h4> : <h4>{seconds}s</h4>}
-      </Col>
-    </Row>
+    <Container className="my-4">
+      <Row>
+        <Col>
+        </Col>
+        <Col xs={12} sm={6}>
+          <Button 
+            disabled={includeEasy || includeMed || includeHard ? false : true}
+            className="word-change" 
+            onClick={handleMiss} 
+            variant="outline-danger">Miss</Button>
+          <Button 
+            disabled={includeEasy || includeMed || includeHard ? false : true}
+            className="word-change" 
+            onClick={handleNewWord} 
+            variant="outline-secondary">Skip Word</Button>
+          <Button
+            disabled={includeEasy || includeMed || includeHard ? false : true} 
+            className="word-change" 
+            onClick={handleHit} 
+            variant="outline-success">Hit</Button>
+          <p
+            className={`feedback text-danger game-component ${includeEasy || includeMed || includeHard ? 'none' : 'block'}`}>
+              Select at least one word set in Settings.</p>
+        </Col>
+        <Col>
+          <h4>Time: </h4>
+            {seconds > 59? <h4>{Math.floor(seconds/60)}m {seconds%60}s</h4> : <h4>{seconds}s</h4>}
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col md={6} lg={5}>
+          <WordList />
+        </Col>
+      </Row>
+    </Container>
   );
 }

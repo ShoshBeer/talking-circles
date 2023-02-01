@@ -48,9 +48,44 @@ h2 {
   font-weight: 600;
 }
 
-p {
+.word-change {
+  margin: 0 5px;
+}
+
+.instructions {
   font-size: 1.25rem;
   font-weight: 600;
+}
+
+.flex {
+  display: flex;
+}
+
+.label-width {
+  flex-basis: 100%;
+}
+
+.feedback {
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: left;
+  padding-top: 5px;
+}
+
+.game-component.feedback {
+  text-align: center;
+}
+
+.none {
+  display: none;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.score {
+  font-size: 1.25rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -65,3 +100,9 @@ p {
     padding: 0.5rem 0;
   }
 } 
+
+@media only screen and (max-width: 768px) {
+  .word-change {
+    margin: 0;
+  }
+}
