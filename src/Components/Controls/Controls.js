@@ -14,45 +14,40 @@ export function Controls() {
 
   const disableButton = (type) => {
     //this prevents the user from unselecting all the word sets
-    if (type === 'easy' && includeEasy && !includeMed && !includeHard) {
+    if (type === 'Easy' && includeEasy && !includeMed && !includeHard) {
       return true;
-    } else if (type === 'med' && includeMed && !includeEasy && !includeHard) {
+    } else if (type === 'Med' && includeMed && !includeEasy && !includeHard) {
       return true;
-    } else if (type === 'hard' && includeHard && !includeEasy && !includeMed) {
+    } else if (type === 'Hard' && includeHard && !includeEasy && !includeMed) {
       return true;
     } else {
       return false;
     }
   }
 
+  const difficultyButtonProperties = [
+    ['Easy', toggleEasy, 'success', includeEasy, 'Most'], 
+    ['Med', toggleMed, 'warning', includeMed, 'Very'], 
+    ['Hard', toggleHard, 'danger', includeHard, 'Pretty']
+  ];
+
   return (
     <Row className="mt-4" >
       <Col md={6}>
         <Form className="mb-3">
           <Form.Label as='h3'>Select at least one word set: </Form.Label>
-          <div className="flex">
-            <Form.Check 
-              onChange={() => dispatch(toggleEasy())} 
-              checked={includeEasy} 
-              className="text-success label-width"
-              type='checkbox'
-              disabled={disableButton('easy')}
-              label={<p className="bold">Most common</p>} />
-            <Form.Check 
-              onChange={() => dispatch(toggleMed())} 
-              checked={includeMed} 
-              className="text-warning label-width" 
-              type={'checkbox'}
-              disabled={disableButton('med')} 
-              label={<p className="bold">Very common</p>} />
-            <Form.Check 
-              onChange={() => dispatch(toggleHard())} 
-              checked={includeHard} 
-              className="text-danger label-width" 
-              type={'checkbox'} 
-              disabled={disableButton('hard')}
-              label={<p className="bold">Pretty common</p>} />
-          </div>
+            {difficultyButtonProperties.map((set, index) => {
+              return (<Form.Check 
+                        type='checkbox'
+                        label={`${set[4]} common`}
+                        onChange={() => dispatch(set[1]())}
+                        checked={set[3]}
+                        className={`text-${set[2]} label-width bold`}
+                        disabled={disableButton(set[0])}
+                        inline
+                        key={index}
+                        />);
+            })}
         </Form>
       </Col>
       <Col md={6}>
