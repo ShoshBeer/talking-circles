@@ -5,7 +5,7 @@ import { store } from './store';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ErrorPage from './errorPage';
+import ErrorPage from './errorPage.jsx';
 import { Score } from './Components/Score/Score';
 import { Root } from './routes/root';
 import { Game } from './Components/Game/Game';
