@@ -3,14 +3,46 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ErrorPage from './errorPage';
+import { Score } from './Components/Score/Score';
+import { Root } from './routes/root';
+import { Game } from './Components/Game/Game';
+import { Controls } from './Components/Controls/Controls';
+import { Instructions } from './routes/Instructions';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <Instructions />
+      },
+      {
+        path: "play",
+        element: <Game />
+      },
+      {
+        path: "settings",
+        element: <Controls />
+      },
+      {
+        path: "score",
+        element: <Score />
+      }
+    ]
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );
