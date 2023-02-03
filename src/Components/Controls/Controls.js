@@ -35,23 +35,26 @@ export function Controls() {
     <Row className="mt-4" >
       <Col md={6}>
         <Form className="mb-3">
-          <Form.Label as='h3'>Select at least one word set: </Form.Label>
-            {difficultyButtonProperties.map((set, index) => {
-              return (<Form.Check 
-                        type='checkbox'
-                        label={`${set[4]} common`}
-                        onChange={() => dispatch(set[1]())}
-                        checked={set[3]}
-                        className={`text-${set[2]} label-width bold`}
-                        disabled={disableButton(set[0])}
-                        inline
-                        key={index}
-                        />);
-            })}
+          <fieldset>
+            <legend className="control-title">Select at least one word set: </legend>
+              {difficultyButtonProperties.map(([difficulty, toggleFn, buttonStyle, isChecked, setDescription]) => {
+                return (<Form.Check 
+                          type='checkbox'
+                          label={`${setDescription} common`}
+                          onChange={() => dispatch(toggleFn())}
+                          checked={isChecked}
+                          className={`text-${buttonStyle} label-width bold`}
+                          disabled={disableButton(difficulty)}
+                          inline
+                          key={difficulty}
+                          id={difficulty}
+                          />);
+              })}
+          </fieldset>
         </Form>
       </Col>
       <Col md={6}>
-        <h3>How many restricted words?</h3>
+        <h3 className="control-title">How many restricted words?</h3>
         <Row className="pt-1">
           <Col>
             <label htmlFor="easier" className="float-left">Easier</label>
