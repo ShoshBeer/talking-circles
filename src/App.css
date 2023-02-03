@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .float-left {
   float: left;
 }
@@ -16,11 +12,6 @@
 
 .width-150 {
   width: 150px;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -38,17 +29,4 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

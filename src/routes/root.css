@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  color: #61dafb;
+  background: #282c34;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+nav li {
+  padding-left: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #61dafb;
+  font-size: larger;
+}
+
+nav a:hover {
+  color: #61dafb;
+  font-weight: bolder;
+}
+
+.active {
+  border-bottom: solid 1px #61dafb;
+}
+
+.nav-style {
+  color: #27c0eb;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+.word-change {
+  margin: 0 5px;
+}
+
+.instructions {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.flex {
+  display: flex;
+}
+
+.label-width {
+  flex-basis: 100%;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.score {
+  font-size: 1.25rem;
+}
+
+.control-title {
+  font-size: 1.6rem;
+  line-height: 38px;
+}
+
+@media only screen and (max-width: 767px) {
+  nav {
+    flex-direction: column;
+  }
+  nav ul {
+    flex-direction: column;
+    padding-top: 0.5rem;
+  }
+  nav li {
+    padding: 0.5rem 0;
+  }
+  .instructions {
+    font-size: 1rem;
+  }
+} 
+
+@media only screen and (max-width: 768px) {
+  .word-change {
+    margin: 0;
+  }
+}
