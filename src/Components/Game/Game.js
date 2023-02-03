@@ -59,6 +59,9 @@ export function Game() {
     return () => clearInterval(intervalID);
   }, [targetWord]);
 
+  const missingDifficultySelection = includeEasy || includeMed || includeHard ? false : true;
+  const hideFeedback = includeEasy || includeMed || includeHard ? 'none' : '';
+
   return (
     <Container className="my-4">
       <Row>
@@ -66,22 +69,22 @@ export function Game() {
         </Col>
         <Col xs={12} sm={6}>
           <Button 
-            disabled={includeEasy || includeMed || includeHard ? false : true}
+            disabled={missingDifficultySelection}
             className="word-change" 
             onClick={handleMiss} 
             variant="outline-danger">Miss</Button>
           <Button 
-            disabled={includeEasy || includeMed || includeHard ? false : true}
+            disabled={missingDifficultySelection}
             className="word-change" 
             onClick={handleNewWord} 
             variant="outline-secondary">Skip Word</Button>
           <Button
-            disabled={includeEasy || includeMed || includeHard ? false : true} 
+            disabled={missingDifficultySelection} 
             className="word-change" 
             onClick={handleHit} 
             variant="outline-success">Hit</Button>
           <p
-            className={`feedback text-danger game-component ${includeEasy || includeMed || includeHard ? 'none' : 'block'}`}>
+            className={`feedback text-danger game-component ${hideFeedback}`}>
               Select at least one word set in Settings.</p>
         </Col>
         <Col>

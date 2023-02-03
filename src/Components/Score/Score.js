@@ -5,15 +5,27 @@ import { Row, Col } from "react-bootstrap";
 export function Score() {
   const passes = useSelector(selectPass);
   const fails = useSelector(selectFail);
+
+  const getPassList = passes.map((word, index) => {
+    const timePlural = word.time === 1 ? 'second' : 'seconds';
+    return (<p 
+              className="score" 
+              key={index}>
+                word: <span className="bold">{word.word.LEMMA}</span> | time: {word.time} {timePlural}
+            </p>);
+  });
+
+  const getFailList = fails.map((word, index) => <p className="score" key={index}>word: <span className="bold">{word.LEMMA}</span></p>);
+
   return (
     <Row className="mt-4">
       <Col xs={12} md={7}>
         <h2>Scored Words</h2>
-        {passes.map((word, index) => <p className="score" key={index}>word: <span className="bold">{word.word.LEMMA}</span> | time: {word.time} {word.time === 1 ? 'second' : 'seconds'}</p>)}
+        {getPassList}
       </Col>
       <Col xs={12} md={5}>
         <h2>Missed Words</h2>
-        {fails.map((word, index) => <p className="score" key={index}>word: <span className="bold">{word.LEMMA}</span></p>)}
+        {getFailList}
       </Col>
     </Row>
   )
