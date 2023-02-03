@@ -36,7 +36,11 @@ export function Controls() {
               label={<b>Pretty common</b>} />
           </div>
           <p
-            className={`feedback text-danger ${includeEasy || includeMed || includeHard ? 'none' : 'block'}`}>
+            className={[
+            'feedback',
+            'text-danger',
+            includeEasy || includeMed || includeHard ? 'none' : 'block',
+            ]}>
               &gt;Please select at least one set.</p>
         </Form>
       </Col>
