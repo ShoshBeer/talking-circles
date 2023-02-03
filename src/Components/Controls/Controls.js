@@ -10,6 +10,9 @@ export function Controls() {
   const includeMed = useSelector(selectIncludeMed);
   const includeHard = useSelector(selectIncludeHard);
 
+  const displayNumOfRestrictedWords = numOfRestrictedWords === '1' ? 'restricted word' : 'restricted words';
+  const hideFeedback = includeEasy || includeMed || includeHard ? 'none' : '';
+
   return (
     <Row className="mt-4" >
       <Col sm={6}>
@@ -21,26 +24,25 @@ export function Controls() {
               checked={includeEasy} 
               className="text-success label-width"
               type='checkbox'
-              label={<b>Most common</b>} />
+              label={<p className="bold">Most common</p>} />
             <Form.Check 
               onChange={() => dispatch(toggleMed())} 
               checked={includeMed} 
               className="text-warning label-width" 
               type={'checkbox'} 
-              label={<b>Very common</b>} />
+              label={<p className="bold">Very common</p>} />
             <Form.Check 
               onChange={() => dispatch(toggleHard())} 
               checked={includeHard} 
               className="text-danger label-width" 
               type={'checkbox'} 
-              label={<b>Pretty common</b>} />
+              label={<p className="bold">Pretty common</p>} />
           </div>
           <p
-            className={[
-            'feedback',
-            'text-danger',
-            includeEasy || includeMed || includeHard ? 'none' : 'block',
-            ]}>
+            className={`
+              feedback 
+              text-danger 
+              ${hideFeedback}`}>
               &gt;Please select at least one set.</p>
         </Form>
       </Col>
@@ -58,7 +60,7 @@ export function Controls() {
               className="mx-3"
             />
             <label htmlFor="" className="float-right">Harder</label>
-            {numOfRestrictedWords === '1' ? <p className="pt-1"><b>{numOfRestrictedWords} restricted word</b></p> : <p className="pt-1"><b>{numOfRestrictedWords} restricted words</b></p>}
+            <p className="pt-1 bold">{numOfRestrictedWords} {displayNumOfRestrictedWords}</p>
           </Col>
         </Row>
       </Col>
