@@ -5,8 +5,8 @@ const settings = createSlice({
   initialState: {
     wordDifficulty: '',
     includeEasy: true,
-    includeMed: false,
-    includeHard: false,
+    includeMed: true,
+    includeHard: true,
     numOfRestrictedWords: 5,
   },
   reducers: {

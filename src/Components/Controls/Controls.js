@@ -11,42 +11,51 @@ export function Controls() {
   const includeHard = useSelector(selectIncludeHard);
 
   const displayNumOfRestrictedWords = numOfRestrictedWords === '1' ? 'restricted word' : 'restricted words';
-  const hideFeedback = includeEasy || includeMed || includeHard ? 'none' : '';
+
+  const disableButton = (type) => {
+    //this prevents the user from unselecting all the word sets
+    if (type === 'easy' && includeEasy && !includeMed && !includeHard) {
+      return true;
+    } else if (type === 'med' && includeMed && !includeEasy && !includeHard) {
+      return true;
+    } else if (type === 'hard' && includeHard && !includeEasy && !includeMed) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   return (
     <Row className="mt-4" >
-      <Col sm={6}>
+      <Col md={6}>
         <Form className="mb-3">
-          <Form.Label as='h3'>Select word set: </Form.Label>
+          <Form.Label as='h3'>Select at least one word set: </Form.Label>
           <div className="flex">
             <Form.Check 
               onChange={() => dispatch(toggleEasy())} 
               checked={includeEasy} 
               className="text-success label-width"
               type='checkbox'
+              disabled={disableButton('easy')}
               label={<p className="bold">Most common</p>} />
             <Form.Check 
               onChange={() => dispatch(toggleMed())} 
               checked={includeMed} 
               className="text-warning label-width" 
-              type={'checkbox'} 
+              type={'checkbox'}
+              disabled={disableButton('med')} 
               label={<p className="bold">Very common</p>} />
             <Form.Check 
               onChange={() => dispatch(toggleHard())} 
               checked={includeHard} 
               className="text-danger label-width" 
               type={'checkbox'} 
+              disabled={disableButton('hard')}
               label={<p className="bold">Pretty common</p>} />
           </div>
-          <p
-            className={`
-              feedback 
-              text-danger 
-              ${hideFeedback}`}>
-              &gt;Please select at least one set.</p>
         </Form>
       </Col>
-      <Col sm={6}>
+      <Col md={6}>
         <h3>How many restricted words?</h3>
         <Row className="pt-1">
           <Col>

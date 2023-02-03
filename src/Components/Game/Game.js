@@ -60,7 +60,6 @@ export function Game() {
   }, [targetWord]);
 
   const missingDifficultySelection = includeEasy || includeMed || includeHard ? false : true;
-  const hideFeedback = includeEasy || includeMed || includeHard ? 'none' : '';
 
   return (
     <Container className="my-4">
@@ -83,9 +82,6 @@ export function Game() {
             className="word-change" 
             onClick={handleHit} 
             variant="outline-success">Hit</Button>
-          <p
-            className={`feedback text-danger game-component ${hideFeedback}`}>
-              Select at least one word set in Settings.</p>
         </Col>
         <Col>
           <h4>Time: </h4>
