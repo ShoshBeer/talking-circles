@@ -7,7 +7,7 @@
 
 ### General
 
- - Add language selector
+ - Add more languages (and language selector)
    - Perhaps Spanish to start because wordmuse API already supports it
  - Set maximum time for card before it's added to miss and new word is rolled
  - Minimize navbar to hamburger menu at smaller widths
