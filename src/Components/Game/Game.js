@@ -2,7 +2,8 @@ import { Row, Col, Button, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, setWordDifficulty } from "../Controls/ControlSlice";
 import { newTargetWord, addPass, addFail, selectTargetWord } from "./GameSlice";
-import frequentWords from '../../Resources/Words_fr_pos.json';
+// import frequentWords from '../../Resources/Words_fr_pos.json';
+import wordDictionary from '../../Resources/english_words_frequencies__dict_v2.json';
 import { useEffect, useState } from "react";
 import { WordList } from "../WordList/WordList";
 
@@ -16,29 +17,44 @@ export function Game() {
 
   const [seconds, setSeconds] = useState(0);
 
-  const randomWordList = frequentWords.filter((word) => ['v', 'n', 'r', 'j'].includes(word.POS));
+  // const randomWordList = frequentWords.filter((word) => ['v', 'n', 'r', 'j'].includes(word.POS));
 
   const handleNewWord = () => {
     //difficulty would relate to both length/rarity, but also to concrete vs abstract concepts
-    let wordOptions = [];
-    if (includeEasy) {
-      wordOptions = randomWordList.slice(0, 670);
+    const keys = [];
+    for (const key in wordDictionary) {
+      if (includeEasy && wordDictionary[key]["frequency"] < 0.00126 && wordDictionary[key]["frequency"] >= 0.0001) {
+        keys.push(key);
+      }
+      else if (includeMed && wordDictionary[key]["frequency"] < 0.0001 && wordDictionary[key]["frequency"] >= 0.00001) {
+        keys.push(key);
+      }
+      else if (includeHard && wordDictionary[key]["frequency"] < 0.00001) {
+        keys.push(key);
+      }
     }
-    if (includeMed) {
-      wordOptions = wordOptions.concat(randomWordList.slice(670, 1366));
-    }
-    if (includeHard) {
-      wordOptions = wordOptions.concat(randomWordList.slice(1366));
-    }
-    const chosenWord = wordOptions[Math.floor(Math.random()*wordOptions.length)];
-    if (chosenWord.FREQUENCY > 499) {
+    const chosenWord = wordDictionary[keys[Math.floor(Math.random() * keys.length)]];
+
+    if (chosenWord["frequency"] >= 0.0001) {
       dispatch(setWordDifficulty('text-success'));
-    } else if (chosenWord.FREQUENCY > 199) {
+    } else if (chosenWord["frequency"] >= 0.00001) {
       dispatch(setWordDifficulty('text-warning'));
     } else {
       dispatch(setWordDifficulty('text-danger'));
     }
     dispatch(newTargetWord(chosenWord));
+
+    // let wordOptions = [];
+    // if (includeEasy) {
+    //   wordOptions = randomWordList.slice(0, 670);
+    // }
+    // if (includeMed) {
+    //   wordOptions = wordOptions.concat(randomWordList.slice(670, 1366));
+    // }
+    // if (includeHard) {
+    //   wordOptions = wordOptions.concat(randomWordList.slice(1366));
+    // }
+    // const chosenWord = wordOptions[Math.floor(Math.random()*wordOptions.length)];
   }
 
   const handleHit = () => {

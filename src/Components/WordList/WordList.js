@@ -20,17 +20,17 @@ export function WordList() {
   return (
     <Card>
       {currentCard.length === 0 ?
-      <Card.Header as="h2" className={wordDifficulty}>{targetWord.LEMMA}</Card.Header> :
+      <Card.Header as="h2" className={wordDifficulty}>{targetWord["word"]}</Card.Header> :
       <OverlayTrigger
         trigger="click"
         placement="bottom"
         overlay={
           <Popover id="target-definition">
             <Popover.Header><i>Definition</i></Popover.Header>
-            <Popover.Body>{currentCard[0].defs.map((target_defs, index) => <li key={index}>{target_defs}</li>)}</Popover.Body>
+            <Popover.Body>{targetWord["definitions"].map((target_defs, index) => <li key={index}>({target_defs[0]}) {target_defs[1]}</li>)}</Popover.Body>
           </Popover>
         }>
-      <Card.Header style={{cursor: 'pointer'}} as="h2" className={wordDifficulty}>{targetWord.LEMMA}</Card.Header>
+      <Card.Header style={{cursor: 'pointer'}} as="h2" className={wordDifficulty}>{targetWord["word"]}</Card.Header>
       </OverlayTrigger> }
       <Card.Body>
         {currentCard.slice(1, Number(numberOfWords) + 1).map((word, index) => {

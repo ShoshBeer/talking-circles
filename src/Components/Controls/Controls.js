@@ -26,9 +26,9 @@ export function Controls() {
   }
 
   const difficultyButtonProperties = [
-    ['Easy', toggleEasy, 'success', includeEasy, 'Most'], 
-    ['Med', toggleMed, 'warning', includeMed, 'Very'], 
-    ['Hard', toggleHard, 'danger', includeHard, 'Pretty']
+    ['Easy', toggleEasy, 'success', includeEasy, 'Common'], 
+    ['Med', toggleMed, 'warning', includeMed, 'Uncommon'], 
+    ['Hard', toggleHard, 'danger', includeHard, 'Rare']
   ];
 
   return (
@@ -40,7 +40,7 @@ export function Controls() {
               {difficultyButtonProperties.map(([difficulty, toggleFn, buttonStyle, isChecked, setDescription]) => {
                 return (<Form.Check 
                           type='checkbox'
-                          label={`${setDescription} common`}
+                          label={`${setDescription}`}
                           onChange={() => dispatch(toggleFn())}
                           checked={isChecked}
                           className={`text-${buttonStyle} label-width bold`}
@@ -61,7 +61,7 @@ export function Controls() {
             <input 
               type='range'
               min='0'
-              max='10'
+              max='5'
               onChange={(e) => dispatch(changeNumOfRestrictedWords(e.target.value))}
               value={numOfRestrictedWords}
               className="mx-3"
