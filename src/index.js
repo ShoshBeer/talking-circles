@@ -11,6 +11,7 @@ import { Root } from './routes/root';
 import { Game } from './Components/Game/Game';
 import { Controls } from './Components/Controls/Controls';
 import { Instructions } from './routes/Instructions';
+import App from './App';
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
+      <App />
     </Provider>
   </React.StrictMode>
 );

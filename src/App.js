@@ -4,6 +4,7 @@ import { Link, Outlet } from 'react-router-dom';
 import './App.css';
 import { Controls } from './Components/Controls/Controls';
 import { Game } from './Components/Game/Game';
+import { RandomWord } from './Components/RandomWord/RandomWord';
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
       </Row>
       <Row>
         <Col>
-          <Outlet />
+          <RandomWord />
         </Col>
       </Row>
     </Container>
