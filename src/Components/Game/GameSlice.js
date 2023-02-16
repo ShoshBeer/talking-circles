@@ -4,7 +4,7 @@ export const fetchWordList = createAsyncThunk(
   'game/fetchWordList',
   async (numOfWords = 10, { getState }) => {
     const state = getState();
-    const targetWord = state.game.targetWord.LEMMA;
+    const targetWord = state.game.targetWord["word"];
     const responseSyn = await fetch(`https://api.datamuse.com/words?rel_syn=${targetWord}&max=${numOfWords}&md=fd&qe=rel_syn`);
     const responseTrg = await fetch(`https://api.datamuse.com/words?rel_trg=${targetWord}&max=${numOfWords}&md=fd`);
     const synonyms = await responseSyn.json();
@@ -17,7 +17,18 @@ export const fetchWordList = createAsyncThunk(
 const game = createSlice({
   name: 'game',
   initialState: {
-    targetWord: {LEMMA: 'example'},
+    targetWord: {
+    "word": 'example', 
+    "definitions": [
+      [
+        "noun",
+        "Something that is representative of all such things in a group."
+      ],
+      [
+        "verb",
+        "To be illustrated or exemplified (by)."
+      ]
+    ]},
     currentCard: [],
     isLoading: false,
     failedToLoad: false,

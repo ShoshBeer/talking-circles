@@ -11,11 +11,11 @@ export function Score() {
     return (<p 
               className="score" 
               key={index}>
-                word: <span className="bold">{word.word.LEMMA}</span> | time: {word.time} {timePlural}
+                word: <span className="bold">{word.word["word"]}</span> | time: {word.time} {timePlural}
             </p>);
   });
 
-  const getFailList = fails.map((word, index) => <p className="score" key={index}>word: <span className="bold">{word.LEMMA}</span></p>);
+  const getFailList = fails.map((word, index) => <p className="score" key={index}>word: <span className="bold">{word["word"]}</span></p>);
 
   return (
     <Row className="mt-4">

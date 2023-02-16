@@ -48,6 +48,16 @@ nav a:hover {
   color: #27c0eb;
 }
 
+div ul {
+  list-style-position: inside;
+  text-align: left;
+}
+
+.centre {
+  width: fit-content;
+  margin: auto;
+}
+
 h2 {
   font-weight: 600;
 }
