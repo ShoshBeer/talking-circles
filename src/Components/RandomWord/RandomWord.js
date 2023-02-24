@@ -1,5 +1,4 @@
 import wordDictionary from '../../Resources/english_words_frequencies__dict_v2.json';
-import { useSelector } from 'react-redux';
 
 export function RandomWord({easy, med, hard}) {
 
