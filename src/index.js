@@ -11,7 +11,6 @@ import { Root } from './routes/root';
 import { Game } from './Components/Game/Game';
 import { Controls } from './Components/Controls/Controls';
 import { Instructions } from './routes/Instructions';
-import App from './App';
 
 const router = createBrowserRouter([
   {

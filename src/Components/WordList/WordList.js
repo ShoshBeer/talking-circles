@@ -17,9 +17,8 @@ export function WordList() {
   const wordDictionary = require(`../../Resources/${language}_smooth_dict.json`);
 
   useEffect(() => {
-    // dispatch(fetchWordList());
     wordDictionary[targetWord["word"]] && dispatch(addRelatedWords(wordDictionary[targetWord["word"]]["related words"]))
-  }, [targetWord, dispatch])
+  }, [targetWord, wordDictionary, dispatch])
 
   return (
     <Card>

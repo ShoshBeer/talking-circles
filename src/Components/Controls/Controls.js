@@ -1,6 +1,5 @@
 import React from "react";
-import { Row, Col, Form, Dropdown, DropdownButton, Container } from "react-bootstrap";
-import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import { Row, Col, Form, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleEasy, toggleMed, toggleHard, changeLanguage, changeNumOfRestrictedWords, selectNumOfRestrictedWords, selectSupportedLanguages, selectIncludeEasy, selectIncludeHard, selectIncludeMed } from "./ControlSlice";
 

@@ -68,3 +68,4 @@
    - Related words are collected from Kaikki dictionary, and some entries have synonyms, hyponyms, hypernyms, meronyms, and related words plus synonyms from Educalingo
  - Added German
  - Resolved bug: `Cannot read properties of undefined (reading 'map')` pretty frequently when choosing a new random word by switching to the new dictionary implementation
+ 
