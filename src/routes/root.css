@@ -48,6 +48,16 @@ nav a:hover {
   color: #27c0eb;
 }
 
+div ul {
+  list-style-position: inside;
+  text-align: left;
+}
+
+.centre {
+  width: fit-content;
+  margin: auto;
+}
+
 h2 {
   font-weight: 600;
 }
@@ -67,10 +77,11 @@ h2 {
 
 .label-width {
   flex-basis: 100%;
+  padding-top: 4px;
 }
 
 .bold {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .score {
@@ -80,6 +91,7 @@ h2 {
 .control-title {
   font-size: 1.6rem;
   line-height: 38px;
+  font-weight: 400;
 }
 
 @media only screen and (max-width: 767px) {
