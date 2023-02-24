@@ -2,24 +2,27 @@ import React from "react";
 import { useEffect } from "react";
 import { Accordion, Card, OverlayTrigger, Popover } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { selectNumOfRestrictedWords, selectWordDifficulty } from "../Controls/ControlSlice";
-import { fetchWordList, selectTargetWord } from "../Game/GameSlice";
-import { selectCurrentCard } from "../Game/GameSlice";
+import { selectNumOfRestrictedWords, selectWordDifficulty, selectLanguage } from "../Controls/ControlSlice";
+import { fetchWordList, selectTargetWord, selectCurrentCard, selectRelatedWords, addRelatedWords } from "../Game/GameSlice";
+import enDictionary from '../../Resources/en_smooth_dict.json';
+import enBigDictionary from '../../Resources/en_full_dict.json';
 
 export function WordList() {
   const dispatch = useDispatch();
   const currentCard = useSelector(selectCurrentCard);
+  const relatedWords = useSelector(selectRelatedWords);
   const targetWord = useSelector(selectTargetWord);
   const wordDifficulty = useSelector(selectWordDifficulty);
   const numberOfWords = useSelector(selectNumOfRestrictedWords);
-  
+
   useEffect(() => {
-    dispatch(fetchWordList());
+    // dispatch(fetchWordList());
+    dispatch(addRelatedWords(enDictionary[targetWord["word"]]["related words"]))
   }, [targetWord, dispatch])
 
   return (
     <Card>
-      {currentCard.length === 0 ?
+      {relatedWords.length === 0 ?
       <Card.Header as="h2" className={wordDifficulty}>{targetWord["word"]}</Card.Header> :
       <OverlayTrigger
         trigger="click"
@@ -33,19 +36,32 @@ export function WordList() {
       <Card.Header style={{cursor: 'pointer'}} as="h2" className={wordDifficulty}>{targetWord["word"]}</Card.Header>
       </OverlayTrigger> }
       <Card.Body>
-        {currentCard.slice(1, Number(numberOfWords) + 1).map((word, index) => {
-          return (
-          <Accordion key={index}>
+        {relatedWords[0] && relatedWords[0].slice(0, Number(numberOfWords)).map((word, index) => {
+           return enDictionary[word[1]] ? 
+          (
+            <Accordion key={index}>
+              <Accordion.Item eventKey={index}>
+                <Accordion.Header>
+                  {word[1]}
+                </Accordion.Header>
+                <Accordion.Body style={{textAlign: 'left'}}>
+                  {enDictionary[word[1]] && enDictionary[word[1]]["definitions"].map((def, index) => <li key={index}>({def[0]}) {def[1]}</li>)}
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion> 
+          ) : enBigDictionary[word[1]] ?
+          (
+            <Accordion key={index}>
             <Accordion.Item eventKey={index}>
               <Accordion.Header>
-                {word.word}
-                {/* {word.tags[0]}, {word.score} */}
+                {word[1]}
               </Accordion.Header>
               <Accordion.Body style={{textAlign: 'left'}}>
-                {word.defs.map((def, index) => <li key={index}>{def}</li>)}
+                {enBigDictionary[word[1]] && enBigDictionary[word[1]]["definitions"].map((def, index) => <li key={index}>({def[0]}) {def[1]}</li>)}
               </Accordion.Body>
             </Accordion.Item>
-          </Accordion> )
+            </Accordion> 
+          ) : null
         })}
       </Card.Body>
     </Card>

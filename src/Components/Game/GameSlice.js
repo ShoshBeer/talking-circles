@@ -28,8 +28,57 @@ const game = createSlice({
         "verb",
         "To be illustrated or exemplified (by)."
       ]
-    ]},
+    ],
+    "related words": [
+      [
+        "synonym",
+        "case",
+        0.000355
+      ],
+      [
+        "synonym",
+        "ideal",
+        2.75e-05
+      ],
+      [
+        "synonym",
+        "instance",
+        3.89e-05
+      ],
+      [
+        "synonym",
+        "lesson",
+        2.95e-05
+      ],
+      [
+        "synonym",
+        "model",
+        0.000135
+      ],
+      [
+        "synonym",
+        "pattern",
+        3.63e-05
+      ],
+      [
+        "synonym",
+        "sample",
+        3.39e-05
+      ],
+      [
+        "synonym",
+        "standard",
+        0.000107
+      ],
+      [
+        "synonym",
+        "warning",
+        3.89e-05
+      ]
+    ]
+  },
     currentCard: [],
+    relatedWords: [],
     isLoading: false,
     failedToLoad: false,
     pass: [],
@@ -46,6 +95,10 @@ const game = createSlice({
 
     'addFail': (state, action) => {
       state.fail = [...state.fail, action.payload];
+    },
+
+    'addRelatedWords': (state, action) => {
+      state.relatedWords = [action.payload];
     }
   },
   extraReducers: (builder) => {
@@ -69,8 +122,10 @@ const game = createSlice({
 export const addPass = game.actions.addPass;
 export const addFail = game.actions.addFail;
 export const newTargetWord = game.actions.newTargetWord;
+export const addRelatedWords = game.actions.addRelatedWords;
 export const selectTargetWord = state => state.game.targetWord;
 export const selectCurrentCard = state => state.game.currentCard;
+export const selectRelatedWords = state => state.game.relatedWords;
 export const selectPass = state => state.game.pass;
 export const selectFail = state => state.game.fail;
 export const gameReducer = game.reducer;
