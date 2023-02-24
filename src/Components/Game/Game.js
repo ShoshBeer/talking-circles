@@ -1,9 +1,7 @@
 import { Row, Col, Button, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, selectWordDifficulty, setWordDifficulty } from "../Controls/ControlSlice";
+import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, selectWordDifficulty, selectLanguage, setWordDifficulty } from "../Controls/ControlSlice";
 import { newTargetWord, addPass, addFail, selectTargetWord } from "./GameSlice";
-import wordDictionary from '../../Resources/english_words_frequencies__dict_v2.json';
-import enDictionary from '../../Resources/en_smooth_dict.json';
 import { useEffect, useState } from "react";
 import { WordList } from "../WordList/WordList";
 
@@ -15,24 +13,27 @@ export function Game() {
   const includeMed = useSelector(selectIncludeMed);
   const includeHard = useSelector(selectIncludeHard);
   const wordDifficulty = useSelector(selectWordDifficulty);
+  const language = useSelector(selectLanguage);
+
+  const wordDictionary = require(`../../Resources/${language}_smooth_dict.json`);
 
   const [seconds, setSeconds] = useState(0);
 
   const handleNewWord = () => {
     //difficulty would relate to both length/rarity, but also to concrete vs abstract concepts
     const keys = [];
-    for (const key in enDictionary) {
-      if (includeEasy && enDictionary[key]["frequency"] < 0.00126 && enDictionary[key]["frequency"] >= 0.0001) {
+    for (const key in wordDictionary) {
+      if (includeEasy && wordDictionary[key]["frequency"] < 0.00126 && wordDictionary[key]["frequency"] >= 0.0001) {
         keys.push(key);
       }
-      else if (includeMed && enDictionary[key]["frequency"] < 0.0001 && enDictionary[key]["frequency"] >= 0.00001) {
+      else if (includeMed && wordDictionary[key]["frequency"] < 0.0001 && wordDictionary[key]["frequency"] >= 0.00001) {
         keys.push(key);
       }
-      else if (includeHard && enDictionary[key]["frequency"] < 0.00001) {
+      else if (includeHard && wordDictionary[key]["frequency"] < 0.00001) {
         keys.push(key);
       }
     }
-    const chosenWord = enDictionary[keys[Math.floor(Math.random() * keys.length)]];
+    const chosenWord = wordDictionary[keys[Math.floor(Math.random() * keys.length)]];
 
     if (chosenWord["frequency"] >= 0.0001) {
       dispatch(setWordDifficulty('text-success'));

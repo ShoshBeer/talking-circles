@@ -3,21 +3,22 @@ import { useEffect } from "react";
 import { Accordion, Card, OverlayTrigger, Popover } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectNumOfRestrictedWords, selectWordDifficulty, selectLanguage } from "../Controls/ControlSlice";
-import { fetchWordList, selectTargetWord, selectCurrentCard, selectRelatedWords, addRelatedWords } from "../Game/GameSlice";
-import enDictionary from '../../Resources/en_smooth_dict.json';
+import { selectTargetWord, selectRelatedWords, addRelatedWords } from "../Game/GameSlice";
 import enBigDictionary from '../../Resources/en_full_dict.json';
 
 export function WordList() {
   const dispatch = useDispatch();
-  const currentCard = useSelector(selectCurrentCard);
   const relatedWords = useSelector(selectRelatedWords);
   const targetWord = useSelector(selectTargetWord);
   const wordDifficulty = useSelector(selectWordDifficulty);
   const numberOfWords = useSelector(selectNumOfRestrictedWords);
+  const language = useSelector(selectLanguage);
+
+  const wordDictionary = require(`../../Resources/${language}_smooth_dict.json`);
 
   useEffect(() => {
     // dispatch(fetchWordList());
-    dispatch(addRelatedWords(enDictionary[targetWord["word"]]["related words"]))
+    wordDictionary[targetWord["word"]] && dispatch(addRelatedWords(wordDictionary[targetWord["word"]]["related words"]))
   }, [targetWord, dispatch])
 
   return (
@@ -37,7 +38,7 @@ export function WordList() {
       </OverlayTrigger> }
       <Card.Body>
         {relatedWords[0] && relatedWords[0].slice(0, Number(numberOfWords)).map((word, index) => {
-           return enDictionary[word[1]] ? 
+           return wordDictionary[word[1]] ? 
           (
             <Accordion key={index}>
               <Accordion.Item eventKey={index}>
@@ -45,7 +46,7 @@ export function WordList() {
                   {word[1]}
                 </Accordion.Header>
                 <Accordion.Body style={{textAlign: 'left'}}>
-                  {enDictionary[word[1]] && enDictionary[word[1]]["definitions"].map((def, index) => <li key={index}>({def[0]}) {def[1]}</li>)}
+                  {wordDictionary[word[1]] && wordDictionary[word[1]]["definitions"].map((def, index) => <li key={index}>({def[0]}) {def[1]}</li>)}
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion> 

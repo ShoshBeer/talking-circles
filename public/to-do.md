@@ -49,6 +49,7 @@
  - Word "huge" has related word "vast." must know why punctuation and strip if not a fluke
  - Not enough related words because some related words aren't in the main dictionary
    - Can solve by grabbing definitions from an earlier dictionary if they aren't in the smooth one
+   - This makes problem of slicing words before knowing if any are missing definitions in both dicts, so going to add definitions from rough dict if word isn't in smooth dict and remove related words not in either.
 ---
 
 ## Completed!
