@@ -14,7 +14,7 @@ export function WordList() {
   const numberOfWords = useSelector(selectNumOfRestrictedWords);
   const language = useSelector(selectLanguage);
 
-  const wordDictionary = require(`../../Resources/${language}_smooth_dict.json`);
+  const wordDictionary = require(`../../Resources/${language[1]}_smooth_dict.json`);
 
   useEffect(() => {
     wordDictionary[targetWord["word"]] && dispatch(addRelatedWords(wordDictionary[targetWord["word"]]["related words"]))
@@ -36,11 +36,11 @@ export function WordList() {
       <Card.Header style={{cursor: 'pointer'}} as="h2" className={wordDifficulty}>{targetWord["word"]}</Card.Header>
       </OverlayTrigger> }
       <Card.Body>
+        <Accordion alwaysOpen={false}>
         {relatedWords[0] && relatedWords[0].slice(0, Number(numberOfWords)).map((word, index) => {
            return wordDictionary[word[1]] ? 
           (
-            <Accordion key={index}>
-              <Accordion.Item eventKey={index}>
+              <Accordion.Item key={index} eventKey={index}>
                 <Accordion.Header>
                   {word[1]}
                 </Accordion.Header>
@@ -48,11 +48,9 @@ export function WordList() {
                   {wordDictionary[word[1]] && wordDictionary[word[1]]["definitions"].map((def, index) => <li key={index}>({def[0]}) {def[1]}</li>)}
                 </Accordion.Body>
               </Accordion.Item>
-            </Accordion> 
           ) : enBigDictionary[word[1]] ?
           (
-            <Accordion key={index}>
-            <Accordion.Item eventKey={index}>
+            <Accordion.Item key={index} eventKey={index}>
               <Accordion.Header>
                 {word[1]}
               </Accordion.Header>
@@ -60,9 +58,9 @@ export function WordList() {
                 {enBigDictionary[word[1]] && enBigDictionary[word[1]]["definitions"].map((def, index) => <li key={index}>({def[0]}) {def[1]}</li>)}
               </Accordion.Body>
             </Accordion.Item>
-            </Accordion> 
           ) : null
         })}
+        </Accordion>
       </Card.Body>
     </Card>
   )
