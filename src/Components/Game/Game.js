@@ -1,6 +1,6 @@
 import { Row, Col, Button, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, selectWordDifficulty, selectLanguage, setWordDifficulty } from "../Controls/ControlSlice";
+import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, selectWordDifficulty, selectLanguage, selectTimeLimit, setWordDifficulty } from "../Controls/ControlSlice";
 import { newTargetWord, addPass, addFail, selectTargetWord } from "./GameSlice";
 import { useEffect, useState } from "react";
 import { WordList } from "../WordList/WordList";
@@ -14,8 +14,9 @@ export function Game() {
   const includeHard = useSelector(selectIncludeHard);
   const wordDifficulty = useSelector(selectWordDifficulty);
   const language = useSelector(selectLanguage);
+  const timeLimit = Number(useSelector(selectTimeLimit));
 
-  const wordDictionary = require(`../../Resources/${language}_smooth_dict.json`);
+  const wordDictionary = require(`../../Resources/${language[1]}_smooth_dict.json`);
 
   const [seconds, setSeconds] = useState(0);
 
@@ -56,12 +57,22 @@ export function Game() {
   }
 
   useEffect(() => {
+    handleNewWord();
+  }, [])
+
+  useEffect(() => {
     setSeconds(0);
     const intervalID = setInterval(() => {
       setSeconds((seconds) => seconds + 1);
     }, 1000);
     return () => clearInterval(intervalID);
   }, [targetWord]);
+
+  useEffect(() => {
+    if (timeLimit !== 0 && seconds >= timeLimit) {
+      handleMiss();
+    }
+  }, [seconds])
 
   const missingDifficultySelection = includeEasy || includeMed || includeHard ? false : true;
 

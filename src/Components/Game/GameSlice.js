@@ -17,66 +17,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const game = createSlice({
   name: 'game',
   initialState: {
-    targetWord: {
-    "word": 'example', 
-    "definitions": [
-      [
-        "noun",
-        "Something that is representative of all such things in a group."
-      ],
-      [
-        "verb",
-        "To be illustrated or exemplified (by)."
-      ]
-    ],
-    "related words": [
-      [
-        "synonym",
-        "case",
-        0.000355
-      ],
-      [
-        "synonym",
-        "ideal",
-        2.75e-05
-      ],
-      [
-        "synonym",
-        "instance",
-        3.89e-05
-      ],
-      [
-        "synonym",
-        "lesson",
-        2.95e-05
-      ],
-      [
-        "synonym",
-        "model",
-        0.000135
-      ],
-      [
-        "synonym",
-        "pattern",
-        3.63e-05
-      ],
-      [
-        "synonym",
-        "sample",
-        3.39e-05
-      ],
-      [
-        "synonym",
-        "standard",
-        0.000107
-      ],
-      [
-        "synonym",
-        "warning",
-        3.89e-05
-      ]
-    ]
-  },
+    targetWord: {},
     relatedWords: [],
     // isLoading: false,
     // failedToLoad: false,
