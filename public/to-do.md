@@ -44,7 +44,11 @@
  - Throws `Cannot read properties of undefined (reading 'map')` pretty frequently when choosing a new random word
    - Has happened with *yeah*, *inform*, *else*, *folks*
    - May be resolved already with new dictionary implementation
-
+ - Accordion tabs stay open when word is changed
+ - Multiple accordion tabs open
+ - Word "huge" has related word "vast." must know why punctuation and strip if not a fluke
+ - Not enough related words because some related words aren't in the main dictionary
+   - Can solve by grabbing definitions from an earlier dictionary if they aren't in the smooth one
 ---
 
 ## Completed!
