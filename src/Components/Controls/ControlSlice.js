@@ -8,6 +8,11 @@ const settings = createSlice({
     includeMed: true,
     includeHard: true,
     numOfRestrictedWords: 5,
+    supportedLanguages: {
+      "English": 'en',
+      "German": 'de'
+    },
+    language: ['en']
   },
   reducers: {
     'toggleEasy': (state) => {
@@ -28,6 +33,10 @@ const settings = createSlice({
 
     'changeNumOfRestrictedWords': (state, action) => {
       state.numOfRestrictedWords = action.payload;
+    },
+
+    'changeLanguage': (state, action) => {
+      state.language = state.supportedLanguages[action.payload];
     }
   }
 });
@@ -37,9 +46,12 @@ export const toggleMed = settings.actions.toggleMed;
 export const toggleHard = settings.actions.toggleHard;
 export const changeNumOfRestrictedWords = settings.actions.changeNumOfRestrictedWords;
 export const setWordDifficulty = settings.actions.setWordDifficulty;
+export const changeLanguage = settings.actions.changeLanguage;
 export const selectWordDifficulty = state => state.settings.wordDifficulty;
 export const selectIncludeEasy = state => state.settings.includeEasy;
 export const selectIncludeMed = state => state.settings.includeMed;
 export const selectIncludeHard = state => state.settings.includeHard;
 export const selectNumOfRestrictedWords = state => state.settings.numOfRestrictedWords;
+export const selectSupportedLanguages = state => state.settings.supportedLanguages;
+export const selectLanguage = state => state.settings.language;
 export const settingsReducer = settings.reducer;
