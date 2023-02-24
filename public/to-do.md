@@ -7,8 +7,8 @@
 
 ### General
 
- - Add more languages (and language selector)
-   - Perhaps Spanish to start because wordmuse API already supports it
+ - Add more languages supported by Educalingo
+ - Add languages supported by wordfreq but not Educalingo
  - Set maximum time for card before it's added to miss and new word is rolled
  - Minimize navbar to hamburger menu at smaller widths
  - Roll new word when navigating to Play instead of starting on 'Example'
@@ -19,14 +19,13 @@
 
  - Make timer display optional
  - Make definitions display on click optional
+ - Make option for definitions to be in native or learning language
+   - Definitions in languages other than English will be taken from Lexicala
 
 ### Related Words
 
- - Make related words from new dictionary
-   - Display definitions for new related words
- - Filter related words to same difficulty or easier as target word
- - Change the list generator to get better related words
-    - maybe collect trigger words and synonyms and then sort by score or frequency
+ - Make better styling for related word definitions
+ - Make only one accordion tab open at a time
 
 ### Target Words
 
@@ -41,11 +40,7 @@
 
 ## Bug Reports
 
- - Throws `Cannot read properties of undefined (reading 'map')` pretty frequently when choosing a new random word
-   - Has happened with *yeah*, *inform*, *else*, *folks*
-   - May be resolved already with new dictionary implementation
  - Accordion tabs stay open when word is changed
- - Multiple accordion tabs open
  - Word "huge" has related word "vast." must know why punctuation and strip if not a fluke
  - Not enough related words because some related words aren't in the main dictionary
    - Can solve by grabbing definitions from an earlier dictionary if they aren't in the smooth one
@@ -65,3 +60,11 @@
  - Users can indicate if they were successful for a given word and the card (or score) gets saved for viewing later (with react router?)
  - Minimize help by default on widths < 992px (md and smaller)
    - Not necessary with React-Router
+ - Make related words from new dictionary
+   - Display definitions for new related words
+ - Filter related words to same difficulty or easier as target word
+   - Not done explicitly, but related words are narrowed to "medium" difficulty (freqeuncy of 1/10,000)
+ - Change the list generator to get better related words
+   - Related words are collected from Kaikki dictionary, and some entries have synonyms, hyponyms, hypernyms, meronyms, and related words plus synonyms from Educalingo
+ - Added German
+ - Resolved bug: `Cannot read properties of undefined (reading 'map')` pretty frequently when choosing a new random word by switching to the new dictionary implementation
