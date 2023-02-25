@@ -2,7 +2,7 @@ import { Row, Col, Button, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, selectWordDifficulty, selectLanguage, selectTimeLimit, setWordDifficulty } from "../Controls/ControlSlice";
 import { newTargetWord, addPass, addFail, selectTargetWord } from "./GameSlice";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { WordList } from "../WordList/WordList";
 
 
@@ -44,7 +44,7 @@ export function Game() {
       dispatch(setWordDifficulty('text-danger'));
     }
     dispatch(newTargetWord(chosenWord));
-  }
+  };
 
   const handleHit = () => {
     dispatch(addPass({word: targetWord, time: seconds, difficulty: wordDifficulty}));
@@ -54,7 +54,7 @@ export function Game() {
   const handleMiss = () => {
     dispatch(addFail({word: targetWord, time: seconds, difficulty: wordDifficulty}));
     handleNewWord();
-  }
+  };
 
   useEffect(() => {
     handleNewWord();
@@ -72,7 +72,7 @@ export function Game() {
     if (timeLimit !== 0 && seconds >= timeLimit) {
       handleMiss();
     }
-  }, [seconds])
+  }, [seconds, timeLimit])
 
   const missingDifficultySelection = includeEasy || includeMed || includeHard ? false : true;
 
