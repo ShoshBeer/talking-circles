@@ -21,8 +21,6 @@
 
 ### Related Words
 
- - Make better styling for related word definitions
- - Make only one accordion tab open at a time
 
 ### Target Words
 
@@ -36,7 +34,6 @@
 
 ## Bug Reports
 
- - Accordion tabs stay open when word is changed
  - Word "huge" has related word "vast." must know why punctuation and strip if not a fluke
  - Not enough related words because some related words aren't in the main dictionary
    - Can solve by grabbing definitions from an earlier dictionary if they aren't in the smooth one
@@ -69,4 +66,7 @@
  - Roll new word when navigating to Play instead of starting on 'Example'
  - Set maximum time for card before it's added to miss and new word is rolled
  - Customize maximum time per word
+ - Make only one accordion tab open at a time
+ - Make better styling for related word definitions
+ - Resolved bug: accordion tabs stay open when word is changed
  

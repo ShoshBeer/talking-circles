@@ -39,6 +39,11 @@ const game = createSlice({
 
     'addRelatedWords': (state, action) => {
       state.relatedWords = [action.payload];
+    },
+
+    'clearScore': (state) => {
+      state.pass = [];
+      state.fail = [];
     }
   },
   // extraReducers: (builder) => {
@@ -63,6 +68,7 @@ export const addPass = game.actions.addPass;
 export const addFail = game.actions.addFail;
 export const newTargetWord = game.actions.newTargetWord;
 export const addRelatedWords = game.actions.addRelatedWords;
+export const clearScore = game.actions.clearScore;
 export const selectTargetWord = state => state.game.targetWord;
 export const selectRelatedWords = state => state.game.relatedWords;
 export const selectPass = state => state.game.pass;

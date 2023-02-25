@@ -1,7 +1,8 @@
 import React from "react";
-import { Row, Col, Form, Container } from "react-bootstrap";
+import { Row, Col, Form, Container, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleEasy, toggleMed, toggleHard, changeLanguage, changeNumOfRestrictedWords, changeTimeLimit, selectTimeLimit, selectNumOfRestrictedWords, selectSupportedLanguages, selectLanguage, selectIncludeEasy, selectIncludeHard, selectIncludeMed } from "./ControlSlice";
+import { clearScore, selectPass, selectFail } from "../Game/GameSlice";
 
 export function Controls() {
   const dispatch = useDispatch();
@@ -12,6 +13,8 @@ export function Controls() {
   const supportedLanguages = useSelector(selectSupportedLanguages);
   const currentLanguage = useSelector(selectLanguage);
   const timeLimit = useSelector(selectTimeLimit);
+  const pass = useSelector(selectPass);
+  const fail = useSelector(selectFail);
 
   const displayNumOfRestrictedWords = numOfRestrictedWords === '1' ? 'restricted word' : 'restricted words';
 
@@ -38,7 +41,7 @@ export function Controls() {
     dispatch(changeTimeLimit(newLimit));
   }
 
-  const timeLimitOptions = [[0, "No limit"], [30, "30 seconds"], [60, "1 minute"], [120, "2 minutes"]];
+  const timeLimitOptions = [[30, "30 seconds"], [60, "1 minute"], [120, "2 minutes"], [0, "No limit"]];
 
   return (
     <Container>
@@ -111,6 +114,16 @@ export function Controls() {
                 </div> )
             })}
           </Form>
+        </Col>
+      </Row>
+      <Row className="mt-4" >
+        <Col>
+          <h3 className="control-title">Clear Score History</h3>
+          <Button 
+            disabled={pass.length == 0 && fail.length == 0 ? true : false} 
+            variant="outline-danger" 
+            onClick={() => dispatch(clearScore())} 
+            >Clear</Button>
         </Col>
       </Row>
     </Container>
