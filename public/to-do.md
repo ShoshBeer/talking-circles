@@ -69,4 +69,5 @@
  - Make only one accordion tab open at a time
  - Make better styling for related word definitions
  - Resolved bug: accordion tabs stay open when word is changed
+ - Scroll bar resets position when accordion tab is reopened
  
