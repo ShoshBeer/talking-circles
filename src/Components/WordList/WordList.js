@@ -42,7 +42,7 @@ export function WordList() {
             return wordDictionary[word[1]] ? 
             (
                 <Accordion.Item key={`${word[1]}-${index}`} eventKey={`${word[1]}-${index}`}>
-                  <Accordion.Header>
+                  <Accordion.Header onClick={() => document.querySelectorAll('.scroll').forEach(element => element.scroll({top: 0})) } >
                     {word[1]}
                   </Accordion.Header>
                   <Accordion.Body className="scroll" style={{textAlign: 'left'}}>
