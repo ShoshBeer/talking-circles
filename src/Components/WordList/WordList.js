@@ -14,7 +14,7 @@ export function WordList() {
   const numberOfWords = useSelector(selectNumOfRestrictedWords);
   const language = useSelector(selectLanguage);
 
-  const wordDictionary = require(`../../Resources/${language}_smooth_dict.json`);
+  const wordDictionary = require(`../../Resources/${language[1]}_smooth_dict.json`);
 
   useEffect(() => {
     wordDictionary[targetWord["word"]] && dispatch(addRelatedWords(wordDictionary[targetWord["word"]]["related words"]))
@@ -29,40 +29,39 @@ export function WordList() {
         placement="bottom"
         overlay={
           <Popover id="target-definition">
-            <Popover.Header><i>Definition</i></Popover.Header>
-            <Popover.Body>{targetWord["definitions"].map((target_defs, index) => <li key={index}>({target_defs[0]}) {target_defs[1]}</li>)}</Popover.Body>
+            <Popover.Header><span className="bold">Definition</span></Popover.Header>
+            <Popover.Body className="scroll" >{targetWord["definitions"].map((target_defs, index) => <li key={index}><span className="italic">{target_defs[0]}</span> - {target_defs[1]}</li>)}</Popover.Body>
           </Popover>
         }>
       <Card.Header style={{cursor: 'pointer'}} as="h2" className={wordDifficulty}>{targetWord["word"]}</Card.Header>
-      </OverlayTrigger> }
+      </OverlayTrigger>
+      }
       <Card.Body>
-        {relatedWords[0] && relatedWords[0].slice(0, Number(numberOfWords)).map((word, index) => {
-           return wordDictionary[word[1]] ? 
-          (
-            <Accordion key={index}>
-              <Accordion.Item eventKey={index}>
+        <Accordion>
+          {relatedWords[0] && relatedWords[0].slice(0, Number(numberOfWords)).map((word, index) => {
+            return wordDictionary[word[1]] ? 
+            (
+                <Accordion.Item key={`${word[1]}-${index}`} eventKey={`${word[1]}-${index}`}>
+                  <Accordion.Header onClick={() => document.querySelectorAll('.scroll').forEach(element => element.scroll({top: 0})) } >
+                    {word[1]}
+                  </Accordion.Header>
+                  <Accordion.Body className="scroll" style={{textAlign: 'left'}}>
+                    {wordDictionary[word[1]] && wordDictionary[word[1]]["definitions"].map((def, index) => <li key={index}><span className="italic">{def[0]}</span> - {def[1]}</li>)}
+                  </Accordion.Body>
+                </Accordion.Item>
+            ) : enBigDictionary[word[1]] ?
+            (
+              <Accordion.Item key={`${word[1]}-${index}`} eventKey={`${word[1]}-${index}`}>
                 <Accordion.Header>
                   {word[1]}
                 </Accordion.Header>
-                <Accordion.Body style={{textAlign: 'left'}}>
-                  {wordDictionary[word[1]] && wordDictionary[word[1]]["definitions"].map((def, index) => <li key={index}>({def[0]}) {def[1]}</li>)}
+                <Accordion.Body className="scroll" style={{textAlign: 'left'}}>
+                  {enBigDictionary[word[1]] && enBigDictionary[word[1]]["definitions"].map((def, index) => <li key={index}>({def[0]}) {def[1]}</li>)}
                 </Accordion.Body>
               </Accordion.Item>
-            </Accordion> 
-          ) : enBigDictionary[word[1]] ?
-          (
-            <Accordion key={index}>
-            <Accordion.Item eventKey={index}>
-              <Accordion.Header>
-                {word[1]}
-              </Accordion.Header>
-              <Accordion.Body style={{textAlign: 'left'}}>
-                {enBigDictionary[word[1]] && enBigDictionary[word[1]]["definitions"].map((def, index) => <li key={index}>({def[0]}) {def[1]}</li>)}
-              </Accordion.Body>
-            </Accordion.Item>
-            </Accordion> 
-          ) : null
-        })}
+            ) : null
+          })}
+        </Accordion>
       </Card.Body>
     </Card>
   )

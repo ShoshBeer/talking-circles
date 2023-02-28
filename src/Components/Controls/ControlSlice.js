@@ -12,7 +12,8 @@ const settings = createSlice({
       "English": 'en',
       "German": 'de'
     },
-    language: ['en']
+    language: ['English', 'en'],
+    timeLimit: "60"
   },
   reducers: {
     'toggleEasy': (state) => {
@@ -36,7 +37,11 @@ const settings = createSlice({
     },
 
     'changeLanguage': (state, action) => {
-      state.language = state.supportedLanguages[action.payload];
+      state.language = [action.payload, state.supportedLanguages[action.payload]];
+    },
+
+    'changeTimeLimit': (state, action) => {
+      state.timeLimit = action.payload;
     }
   }
 });
@@ -47,6 +52,7 @@ export const toggleHard = settings.actions.toggleHard;
 export const changeNumOfRestrictedWords = settings.actions.changeNumOfRestrictedWords;
 export const setWordDifficulty = settings.actions.setWordDifficulty;
 export const changeLanguage = settings.actions.changeLanguage;
+export const changeTimeLimit = settings.actions.changeTimeLimit;
 export const selectWordDifficulty = state => state.settings.wordDifficulty;
 export const selectIncludeEasy = state => state.settings.includeEasy;
 export const selectIncludeMed = state => state.settings.includeMed;
@@ -54,4 +60,5 @@ export const selectIncludeHard = state => state.settings.includeHard;
 export const selectNumOfRestrictedWords = state => state.settings.numOfRestrictedWords;
 export const selectSupportedLanguages = state => state.settings.supportedLanguages;
 export const selectLanguage = state => state.settings.language;
+export const selectTimeLimit = state => state.settings.timeLimit;
 export const settingsReducer = settings.reducer;
