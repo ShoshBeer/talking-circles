@@ -9,10 +9,7 @@
 
  - Add more languages supported by Educalingo
  - Add languages supported by wordfreq but not Educalingo
- - Set maximum time for card before it's added to miss and new word is rolled
  - Minimize navbar to hamburger menu at smaller widths
- - Roll new word when navigating to Play instead of starting on 'Example'
- - Improve error page to include return to home screen button
  - Add references before deploying!!
 
 ### Controls
@@ -24,8 +21,6 @@
 
 ### Related Words
 
- - Make better styling for related word definitions
- - Make only one accordion tab open at a time
 
 ### Target Words
 
@@ -34,13 +29,11 @@
  - Make sure there are 5 related words
  - Filter duplicate words on list with different forms
     - E.g. answer and answers, economize and economise
- - Make only one definition accordion tab open at a time
 
 ---
 
 ## Bug Reports
 
- - Accordion tabs stay open when word is changed
  - Word "huge" has related word "vast." must know why punctuation and strip if not a fluke
  - Not enough related words because some related words aren't in the main dictionary
    - Can solve by grabbing definitions from an earlier dictionary if they aren't in the smooth one
@@ -68,4 +61,13 @@
    - Related words are collected from Kaikki dictionary, and some entries have synonyms, hyponyms, hypernyms, meronyms, and related words plus synonyms from Educalingo
  - Added German
  - Resolved bug: `Cannot read properties of undefined (reading 'map')` pretty frequently when choosing a new random word by switching to the new dictionary implementation
+ - Improve error page to include return to home screen button
+   - Error page is rendered below the nav bar so can still navigate to other parts of the page
+ - Roll new word when navigating to Play instead of starting on 'Example'
+ - Set maximum time for card before it's added to miss and new word is rolled
+ - Customize maximum time per word
+ - Make only one accordion tab open at a time
+ - Make better styling for related word definitions
+ - Resolved bug: accordion tabs stay open when word is changed
+ - Scroll bar resets position when accordion tab is reopened
  
