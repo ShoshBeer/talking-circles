@@ -10,7 +10,8 @@ const settings = createSlice({
     numOfRestrictedWords: 5,
     supportedLanguages: {
       "English": 'en',
-      "German": 'de'
+      "German": 'de',
+      "French": 'fr'
     },
     language: ['English', 'en'],
     timeLimit: "60"
