@@ -21,12 +21,12 @@
 
 ### Related Words
 
+ - Remove duplicate English related words and make sure there are defs for displaced related words
 
 ### Target Words
 
  - Add field to input target word manually
  - Add way to upload list of vocabulary words to use as source for target words
- - Make sure there are 5 related words
  - Filter duplicate words on list with different forms
     - E.g. answer and answers, economize and economise
 
@@ -35,9 +35,7 @@
 ## Bug Reports
 
  - Word "huge" has related word "vast." must know why punctuation and strip if not a fluke
- - Not enough related words because some related words aren't in the main dictionary
-   - Can solve by grabbing definitions from an earlier dictionary if they aren't in the smooth one
-   - This makes problem of slicing words before knowing if any are missing definitions in both dicts, so going to add definitions from rough dict if word isn't in smooth dict and remove related words not in either.
+
 ---
 
 ## Completed!
@@ -70,4 +68,6 @@
  - Make better styling for related word definitions
  - Resolved bug: accordion tabs stay open when word is changed
  - Scroll bar resets position when accordion tab is reopened
+ - Make sure there are 5 related words
+ - Fixed not enough related words because some related words aren't in the main dictionary by adding definitions from draft dict to the RW array if it isn't in the smooth dict
  
