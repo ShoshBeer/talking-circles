@@ -50,9 +50,9 @@ export function WordList() {
                     </Accordion.Body>
                   )
                   :
-                  (
+                  ( 
                     <Accordion.Body className="scroll" style={{textAlign: 'left'}}>
-                      {wordDictionary[word[1]]["definitions"].map((def, index) => <li key={index}><span className="italic">{def[0]}</span> - {def[1]}</li>)}
+                      {wordDictionary[word[1]] && wordDictionary[word[1]]["definitions"].map((def, index) => <li key={index}><span className="italic">{def[0]}</span> - {def[1]}</li>)}
                     </Accordion.Body>
                   )
                 }
