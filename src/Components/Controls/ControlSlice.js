@@ -9,9 +9,11 @@ const settings = createSlice({
     includeHard: true,
     numOfRestrictedWords: 5,
     supportedLanguages: {
-      "English": 'en',
-      "German": 'de',
-      "French": 'fr'
+      'English': 'en',
+      'German': 'de',
+      'French': 'fr',
+      'Spanish': 'es',
+      'Italian': 'it'
     },
     language: ['English', 'en'],
     timeLimit: "60"

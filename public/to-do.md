@@ -11,6 +11,7 @@
  - Add languages supported by wordfreq but not Educalingo
  - Minimize navbar to hamburger menu at smaller widths
  - Add references before deploying!!
+ - Remove NSFW words
 
 ### Controls
 
@@ -35,6 +36,8 @@
 ## Bug Reports
 
  - Word "huge" has related word "vast." must know why punctuation and strip if not a fluke
+ - Spanish: some related words are not in smooth dict and don't have definitions
+ - Target word definition popup should close when new word is rolled and when clicking elsewhere
 
 ---
 
