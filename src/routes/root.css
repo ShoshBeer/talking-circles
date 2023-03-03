@@ -19,14 +19,7 @@ nav {
   background: #282c34;
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  align-items: center;
-  overflow: hidden;
-}
-
-nav li {
+.menu li {
   padding-left: 1rem;
 }
 
@@ -47,11 +40,6 @@ nav a:hover {
 
 .nav-style {
   color: #27c0eb;
-}
-
-div ul {
-  list-style-position: inside;
-  text-align: left;
 }
 
 .centre {
@@ -116,6 +104,10 @@ h2 {
 }
 
 .menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  overflow: hidden;
   clear: both;
   max-height: 0;
   transition: max-height .2s ease-out;
@@ -185,17 +177,23 @@ h2 {
 
 @media only screen and (max-width: 767px) {
   nav {
-    flex-direction: column;
+    display: block;
+    padding-right: 1rem;
   }
-  nav ul {
+  .menu {
     flex-direction: column;
-    padding-top: 0.5rem;
+    /* padding-top: 0.5rem; */
   }
-  nav li {
+  .menu li {
     padding: 0.5rem 0;
   }
   .instructions {
     font-size: 1rem;
+  }
+  h1 {
+    text-align: left;
+    display: inline-block;
+    padding-top: 9px;
   }
 } 
 
@@ -210,14 +208,40 @@ h2 {
     display: none;
   }
 
-  /* nav li {
+  .menu li {
     float: left;
     padding-left: 1rem;
-  } */
+  }
 
   .menu {
     clear: none;
     float: right;
     max-height: none;
+    overflow: visible;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  nav {
+		padding: 1rem 1rem 0.5rem;
+		text-align: left;
+	}
+	h1 {
+		display: inline;
+	}
+	.menu-icon {
+		padding: 5px 20px;
+	}
+}
+
+@media only screen and (max-width: 380px) and (min-width: 321px) {
+  .menu-icon {
+    /* display: block; */
+    padding: 40px 15px;
+  }
+
+  h1 {
+    display: inline-block;
+    max-width: 250px;
   }
 }

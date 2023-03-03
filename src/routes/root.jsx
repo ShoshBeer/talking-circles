@@ -10,7 +10,7 @@ export function Root() {
           <nav>
             <h1>Talking in Circles</h1>
             <input className="menu-btn" type="checkbox" id="menu-btn" />
-            <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
+            <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
             <ul className="menu">
               <li><NavLink to={`/`}>Instructions</NavLink></li>
               <li><NavLink to={`play`}>Play</NavLink></li>
