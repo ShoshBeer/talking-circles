@@ -96,7 +96,7 @@ export function Controls() {
           </Form.Select>
         </Col>
         <Col>
-          <h3 className="control-title">Choose a time limit</h3>
+          <h3 className="control-title mt-4">Choose a time limit</h3>
           <Form>
             {timeLimitOptions.map(option => {
               return (
