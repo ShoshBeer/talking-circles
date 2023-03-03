@@ -175,34 +175,7 @@ h2 {
   top: 0;
 }
 
-@media only screen and (max-width: 767px) {
-  nav {
-    display: block;
-    padding-right: 1rem;
-  }
-  .menu {
-    flex-direction: column;
-    /* padding-top: 0.5rem; */
-  }
-  .menu li {
-    padding: 0.5rem 0;
-  }
-  .instructions {
-    font-size: 1rem;
-  }
-  h1 {
-    text-align: left;
-    display: inline-block;
-    padding-top: 9px;
-  }
-} 
-
-@media only screen and (max-width: 768px) {
-  .word-change {
-    margin: 0;
-  }
-}
-
+/* Large screens (e.g. laptops) - larger */
 @media (min-width: 768px) {
   .menu-icon {
     display: none;
@@ -221,27 +194,164 @@ h2 {
   }
 }
 
-@media only screen and (max-width: 320px) {
+/* Mobile & tablets - range */
+@media only screen and (min-width: 439px) and (max-width: 767px) {
+  .word-change {
+    margin: 0;
+  }
   nav {
-		padding: 1rem 1rem 0.5rem;
-		text-align: left;
-	}
-	h1 {
-		display: inline;
-	}
-	.menu-icon {
-		padding: 5px 20px;
-	}
+    display: block;
+    padding-right: 1rem;
+  }
+  .menu {
+    flex-direction: column;
+  }
+  .menu li {
+    padding: 0.5rem 0;
+  }
+  .instructions {
+    font-size: 1rem;
+  }
+  h1 {
+    text-align: left;
+    display: inline-block;
+    padding-top: 9px;
+  }
 }
 
-@media only screen and (max-width: 380px) and (min-width: 321px) {
-  .menu-icon {
-    /* display: block; */
-    padding: 40px 15px;
+@media only screen and (min-width: 420px) and (max-width: 438px) {
+  .word-change {
+    margin: 0;
   }
-
+  nav {
+    display: block;
+    padding: 1rem 1rem 0.5rem;
+  }
+  .menu {
+    flex-direction: column;
+  }
+  .menu-icon {
+    padding: 24px 15px;
+  }
+  .menu li {
+    padding: 0.5rem 0;
+  }
+  .instructions {
+    font-size: 1rem;
+  }
   h1 {
+    text-align: left;
     display: inline-block;
-    max-width: 250px;
+    padding-top: 9px;
+  }
+}
+
+@media only screen and (min-width: 408px) and (max-width: 419px) {
+  .word-change {
+    margin: 0;
+  }
+  nav {
+    display: block;
+    padding: 1rem 1rem 0.5rem;
+  }
+  .menu {
+    flex-direction: column;
+  }
+  .menu-icon {
+    padding: 24px 15px;
+  }
+  .menu li {
+    padding: 0.5rem 0;
+  }
+  .instructions {
+    font-size: 1rem;
+  }
+  h1 {
+    text-align: left;
+    display: inline-block;
+    padding-top: 9px;
+  }
+}
+
+@media only screen and (min-width: 391px) and (max-width: 407px) {
+  .word-change {
+    margin: 0;
+  }
+  nav {
+    display: block;
+    padding: 1rem 1rem 0.5rem;
+  }
+  .menu {
+    flex-direction: column;
+  }
+  .menu-icon {
+    padding: 24px 8px;
+  }
+  .menu li {
+    padding: 0.5rem 0;
+  }
+  .instructions {
+    font-size: 1rem;
+  }
+  h1 {
+    text-align: left;
+    display: inline-block;
+    padding-top: 9px;
+  }
+}
+
+@media only screen and (min-width: 310px) and (max-width: 390px) {
+  .word-change {
+    margin: 0;
+  }
+  nav {
+    display: block;
+    padding: 1rem 1rem 0.5rem;
+    max-height: 100px;
+  }
+  .menu {
+    flex-direction: column;
+  }
+  .menu-icon {
+    padding: 30px 18px;
+  }
+  .menu li {
+    padding: 0.5rem 0;
+  }
+  .instructions {
+    font-size: 1rem;
+  }
+  h1 {
+    text-align: left;
+    display: inline-block;
+    max-width: 200px;
+  }
+}
+
+@media only screen and (max-width: 309px) {
+  .word-change {
+    margin: 0;
+  }
+  nav {
+    display: block;
+    padding: 1rem 1rem 0.5rem;
+    max-height: 100px;
+  }
+  .menu {
+    flex-direction: column;
+  }
+  .menu-icon {
+    padding: 30px 10px;
+  }
+  .menu li {
+    padding: 0.5rem 0;
+  }
+  .instructions {
+    font-size: 1rem;
+  }
+  h1 {
+    text-align: left;
+    display: inline-block;
+    max-width: 160px;
   }
 }
