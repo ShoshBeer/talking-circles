@@ -9,8 +9,8 @@
 
  - Add more languages supported by Educalingo
  - Add languages supported by wordfreq but not Educalingo
- - Minimize navbar to hamburger menu at smaller widths
  - Add references before deploying!!
+ - Remove NSFW words
 
 ### Controls
 
@@ -35,6 +35,8 @@
 ## Bug Reports
 
  - Word "huge" has related word "vast." must know why punctuation and strip if not a fluke
+ - Spanish: some related words are not in smooth dict and don't have definitions
+ - Target word definition popup should close when new word is rolled and when clicking elsewhere
 
 ---
 
@@ -70,4 +72,5 @@
  - Scroll bar resets position when accordion tab is reopened
  - Make sure there are 5 related words
  - Fixed not enough related words because some related words aren't in the main dictionary by adding definitions from draft dict to the RW array if it isn't in the smooth dict
+ - Minimize navbar to hamburger menu at smaller widths
  
