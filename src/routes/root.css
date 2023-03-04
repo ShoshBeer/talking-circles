@@ -11,6 +11,25 @@ h1 {
   font-weight: bold;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.license {
+  color: #61dafb;
+  background: #282c34;
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.license a {
+  color: #fff;
+  border: #27c0eb;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
