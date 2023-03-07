@@ -8,7 +8,7 @@ export function Root() {
       <Row>
         <Col>
           <nav>
-            <h1>Talking Circles</h1>
+            <h1>Talking in Circles</h1>
             <input className="menu-btn" type="checkbox" id="menu-btn" />
             <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
             <ul className="menu">
