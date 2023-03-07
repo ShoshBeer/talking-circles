@@ -1,70 +1,62 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Talking Circles
 
-## Available Scripts
+## About
 
-In the project directory, you can run:
+This is a game to be played with two or more people to help practise crucial language fluency skills. Specifically: 
+ - Verbal skills are developed by forming sentences and communicating orginal, even abstract, ideas.
+ - Listening comprehension is utilized to understand the clues and solve the word.
+ - Vocabulary is increased by encountering new words and using them creatively helps cement them in long-term memory.
 
-### `npm start`
+## Supported Languages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Current supported languages include:
+ - English
+ - German
+ - French
+ - Spanish
+ - Italian
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ More to come!
 
-### `npm test`
+## How to Play
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A game can consist of any number of rounds. Players can take turns giving clues each round, after a certain number of rounds, or after a certain amount of time. <br>
 
-### `npm run build`
+One round is played like this:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. One player will see a card with a word in their target language at the top. Below the target word will be 0-5 words related to the target word. No one else is allowed to look at this card.
+   - If you don't know a word on the card, you can click the word to see a pop-up definition. 
+2. The clue-giver must speak in the target language to get the other player(s) to figure out the word. 
+   - This can be done by describing the meaning of the word, or providing synonyms, or telling stories where the word might fit. 
+   - The clue giver is not allowed to say the target word or any of the related words in any form.
+3. Once the other player(s) figure out the word and say it out loud, you score the word.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The game settings can be used to select the target language and to adjust the difficulty appropriately. 
+ - The target words can be limited based on how common they are by choosing the common, uncommon, and/or rare word sets.
+ - The number of related words can be increased to have more restrictions or decreased to have fewer restrictions. 
+ - A time limit can be specified for each round, so the word must be scored within that limit or else the point is lost.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
 
-### `npm run eject`
+This word is licensed under a [Creative Commons Attribution Share-Alike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Data Sources and Citations
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Many thanks to the authors of the freely-available data tools that allowed me to build this app!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Dictionary data for all languages comes from https://kaikki.org/dictionary/, which includes a list of words and phrases in that language, definitions in English for every sense, and related words for some words.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> Tatu Ylonen: Wiktextract: Wiktionary as Machine-Readable Structured Data, Proceedings of the 13th Conference on Language Resources and Evaluation (LREC), pp. 1317-1325, Marseille, 20-25 June 2022.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Word freqeuncy data for all languages comes from [wordfreq](https://zenodo.org/record/7199437), a very useful tool that I used to obtain the frequency score of a word and a list of the most common words in a specified language.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> Robyn Speer. (2022). rspeer/wordfreq: v3.0 (v3.0.2). Zenodo. https://doi.org/10.5281/zenodo.7199437
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Extra synonyms for all languages are sourced from PyMultiDictionary, which was useful for getting related words for each target word.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> Pablo R. Pizarro. (2023). PyMultiDictionary: v1.2.1. PyPi. https://pypi.org/project/PyMultiDictionary/
