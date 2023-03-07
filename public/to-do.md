@@ -37,6 +37,8 @@
  - Word "huge" has related word "vast." must know why punctuation and strip if not a fluke
  - Spanish: some related words are not in smooth dict and don't have definitions
  - Target word definition popup should close when new word is rolled and when clicking elsewhere
+ - German words still include words with only definitions like "strong accusative", "singular participle"
+ - Footer with license loads before rest of page
 
 ---
 
