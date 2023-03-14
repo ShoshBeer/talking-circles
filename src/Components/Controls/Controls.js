@@ -102,7 +102,7 @@ export function Controls() {
               return (
                 <div key={option[0]}>
                   <Form.Check
-                    checked={option[0] === timeLimit ? true : false}
+                    checked={option[0] === Number(timeLimit) ? true : false}
                     type='radio'
                     name='maxTime'
                     value={option[0]}
@@ -116,7 +116,7 @@ export function Controls() {
           </Form>
         </Col>
       </Row>
-      <Row className="mt-4" >
+      <Row className="my-4" >
         <Col>
           <h3 className="control-title">Clear Score History</h3>
           <Button 

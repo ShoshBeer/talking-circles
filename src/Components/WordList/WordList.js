@@ -26,13 +26,14 @@ export function WordList() {
       <OverlayTrigger
         trigger="click"
         placement="bottom"
+        rootClose
         overlay={
           <Popover id="target-definition">
             <Popover.Header><span className="bold">Definition</span></Popover.Header>
             <Popover.Body className="scroll" >{targetWord["definitions"].map((target_defs, index) => <li key={index}><span className="italic">{target_defs[0]}</span> - {target_defs[1]}</li>)}</Popover.Body>
           </Popover>
         }>
-      <Card.Header style={{cursor: 'pointer'}} as="h2" className={wordDifficulty}>{targetWord["word"]}</Card.Header>
+        <Card.Header style={{cursor: 'pointer'}} as="h2" className={wordDifficulty}>{targetWord["word"]}</Card.Header>
       </OverlayTrigger>
       }
       <Card.Body>
