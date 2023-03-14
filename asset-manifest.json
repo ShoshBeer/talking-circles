@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/talking-circles/static/css/main.53e3013e.css",
+    "main.js": "/talking-circles/static/js/main.e5bb9581.js",
+    "static/js/787.1cfd2630.chunk.js": "/talking-circles/static/js/787.1cfd2630.chunk.js",
+    "index.html": "/talking-circles/index.html",
+    "main.53e3013e.css.map": "/talking-circles/static/css/main.53e3013e.css.map",
+    "main.e5bb9581.js.map": "/talking-circles/static/js/main.e5bb9581.js.map",
+    "787.1cfd2630.chunk.js.map": "/talking-circles/static/js/787.1cfd2630.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.53e3013e.css",
+    "static/js/main.e5bb9581.js"
+  ]
+}
