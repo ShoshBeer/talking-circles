@@ -36,10 +36,11 @@
 
  - Word "huge" has related word "vast." must know why punctuation and strip if not a fluke
  - Spanish: some related words are not in smooth dict and don't have definitions
- - Target word definition popup should close when new word is rolled and when clicking elsewhere
  - German words still include words with only definitions like "strong accusative", "singular participle"
  - Footer with license loads before rest of page
-
+ - Hit and Miss stay highlighted on mobile
+ - Refreshing github page from other routes (i.e. not instructions) gives 404 error
+ - Target word popover definition stays when word times out and rolls new word automatically (no click to dismiss it)
 ---
 
 ## Completed!
@@ -75,4 +76,7 @@
  - Make sure there are 5 related words
  - Fixed not enough related words because some related words aren't in the main dictionary by adding definitions from draft dict to the RW array if it isn't in the smooth dict
  - Minimize navbar to hamburger menu at smaller widths
- 
+ - Footer blocks bottom of the page on mobile
+ - Time limit radio button doesn't show value
+ - Navbar should close automatically when route is clicked
+ - Target word definition popup should close when new word is rolled and when clicking elsewhere

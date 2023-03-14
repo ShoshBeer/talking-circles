@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/talking-circles/static/css/main.53e3013e.css",
-    "main.js": "/talking-circles/static/js/main.a8fbe97e.js",
+    "main.css": "/talking-circles/static/css/main.c9d88f2d.css",
+    "main.js": "/talking-circles/static/js/main.437e7e25.js",
     "static/js/787.1cfd2630.chunk.js": "/talking-circles/static/js/787.1cfd2630.chunk.js",
     "index.html": "/talking-circles/index.html",
-    "main.53e3013e.css.map": "/talking-circles/static/css/main.53e3013e.css.map",
-    "main.a8fbe97e.js.map": "/talking-circles/static/js/main.a8fbe97e.js.map",
+    "main.c9d88f2d.css.map": "/talking-circles/static/css/main.c9d88f2d.css.map",
+    "main.437e7e25.js.map": "/talking-circles/static/js/main.437e7e25.js.map",
     "787.1cfd2630.chunk.js.map": "/talking-circles/static/js/787.1cfd2630.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.53e3013e.css",
-    "static/js/main.a8fbe97e.js"
+    "static/css/main.c9d88f2d.css",
+    "static/js/main.437e7e25.js"
   ]
 }
