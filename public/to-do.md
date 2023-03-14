@@ -40,7 +40,7 @@
  - Footer with license loads before rest of page
  - Hit and Miss stay highlighted on mobile
  - Refreshing github page from other routes (i.e. not instructions) gives 404 error
-
+ - Target word popover definition stays when word times out and rolls new word automatically (no click to dismiss it)
 ---
 
 ## Completed!
