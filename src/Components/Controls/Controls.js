@@ -102,7 +102,7 @@ export function Controls() {
               return (
                 <div key={option[0]}>
                   <Form.Check
-                    checked={option[0] == timeLimit ? true : false}
+                    checked={option[0] === timeLimit ? true : false}
                     type='radio'
                     name='maxTime'
                     value={option[0]}
@@ -120,7 +120,7 @@ export function Controls() {
         <Col>
           <h3 className="control-title">Clear Score History</h3>
           <Button 
-            disabled={pass.length == 0 && fail.length == 0 ? true : false} 
+            disabled={pass.length === 0 && fail.length === 0 ? true : false} 
             variant="outline-danger" 
             onClick={() => dispatch(clearScore())} 
             >Clear</Button>

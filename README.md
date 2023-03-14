@@ -4,9 +4,9 @@
 ## About
 
 This is a game to be played with two or more people to help practise crucial language fluency skills. Specifically: 
- - Verbal skills are developed by forming sentences and communicating orginal, even abstract, ideas.
+ - Verbal skills are developed by forming sentences and communicating ideas.
  - Listening comprehension is utilized to understand the clues and solve the word.
- - Vocabulary is increased by encountering new words and using them creatively helps cement them in long-term memory.
+ - Vocabulary is increased by using new words creatively, which helps cement them in long-term memory.
 
 ## Supported Languages
 
@@ -21,7 +21,7 @@ Current supported languages include:
 
 ## How to Play
 
-A game can consist of any number of rounds. Players can take turns giving clues each round, after a certain number of rounds, or after a certain amount of time. <br>
+In essence, a round is one person getting the other player(s) to say a specific word. A game can consist of any number of rounds. Players may wish to take turns giving clues each round or switch roles after a certain number of rounds. <br>
 
 One round is played like this:
 
@@ -39,7 +39,7 @@ The game settings can be used to select the target language and to adjust the di
 
 ## License
 
-This word is licensed under a [Creative Commons Attribution Share-Alike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).
+This work is licensed under a [Creative Commons Attribution Share-Alike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Data Sources and Citations
 
