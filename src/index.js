@@ -40,7 +40,9 @@ const router = createBrowserRouter([
       }
     ]
   }
-])
+], {
+  basename: "/talking-circles",
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
