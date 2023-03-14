@@ -36,7 +36,6 @@
 
  - Word "huge" has related word "vast." must know why punctuation and strip if not a fluke
  - Spanish: some related words are not in smooth dict and don't have definitions
- - Target word definition popup should close when new word is rolled and when clicking elsewhere
  - German words still include words with only definitions like "strong accusative", "singular participle"
  - Footer with license loads before rest of page
  - Hit and Miss stay highlighted on mobile
@@ -80,3 +79,4 @@
  - Footer blocks bottom of the page on mobile
  - Time limit radio button doesn't show value
  - Navbar should close automatically when route is clicked
+ - Target word definition popup should close when new word is rolled and when clicking elsewhere
