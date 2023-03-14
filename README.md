@@ -8,6 +8,8 @@ This is a game to be played with two or more people to help practise crucial lan
  - Listening comprehension is utilized to understand the clues and solve the word.
  - Vocabulary is increased by using new words creatively, which helps cement them in long-term memory.
 
+*Note: The words have not been filtered at this time. There may be offensive and inappropriate words until the next update is released.*
+
 ## Supported Languages
 
 Current supported languages include:
