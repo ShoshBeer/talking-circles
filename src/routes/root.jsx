@@ -3,6 +3,16 @@ import { NavLink, Outlet } from "react-router-dom";
 import './root.css';
 
 export function Root() {
+  const hideMenu = () => {
+    let menuOpen = document.getElementById('menu-btn').checked;
+    console.log(menuOpen);
+
+    if (menuOpen) {
+      document.getElementById('menu-btn').checked = false;
+      console.log(menuOpen);
+    }
+  }
+
   return (
     <Container className="text-center">
       <Row>
@@ -12,10 +22,10 @@ export function Root() {
             <input className="menu-btn" type="checkbox" id="menu-btn" />
             <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
             <ul className="menu">
-              <li><NavLink to={`/`}>Instructions</NavLink></li>
-              <li><NavLink to={`play`}>Play</NavLink></li>
-              <li><NavLink to={`settings`}>Settings</NavLink></li>
-              <li><NavLink to={`score`}>Score</NavLink></li>
+              <li onClick={() => hideMenu()}><NavLink to={`/`}>Instructions</NavLink></li>
+              <li onClick={() => hideMenu()}><NavLink to={`play`}>Play</NavLink></li>
+              <li onClick={() => hideMenu()}><NavLink to={`settings`}>Settings</NavLink></li>
+              <li onClick={() => hideMenu()}><NavLink to={`score`}>Score</NavLink></li>
             </ul>
           </nav>
         </Col>

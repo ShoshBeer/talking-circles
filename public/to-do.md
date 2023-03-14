@@ -39,6 +39,8 @@
  - Target word definition popup should close when new word is rolled and when clicking elsewhere
  - German words still include words with only definitions like "strong accusative", "singular participle"
  - Footer with license loads before rest of page
+ - Hit and Miss stay highlighted on mobile
+ - Refreshing github page from other routes (i.e. not instructions) gives 404 error
 
 ---
 
@@ -75,4 +77,6 @@
  - Make sure there are 5 related words
  - Fixed not enough related words because some related words aren't in the main dictionary by adding definitions from draft dict to the RW array if it isn't in the smooth dict
  - Minimize navbar to hamburger menu at smaller widths
- 
+ - Footer blocks bottom of the page on mobile
+ - Time limit radio button doesn't show value
+ - Navbar should close automatically when route is clicked
