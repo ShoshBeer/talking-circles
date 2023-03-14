@@ -3,18 +3,27 @@
   margin: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
 }
 
 h1 {
   font-weight: bold;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
+.footer {
   width: 100%;
+  flex-shrink: 0;
 }
 
 .license {

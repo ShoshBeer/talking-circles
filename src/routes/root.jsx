@@ -5,11 +5,9 @@ import './root.css';
 export function Root() {
   const hideMenu = () => {
     let menuOpen = document.getElementById('menu-btn').checked;
-    console.log(menuOpen);
 
     if (menuOpen) {
       document.getElementById('menu-btn').checked = false;
-      console.log(menuOpen);
     }
   }
 

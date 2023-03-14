@@ -116,7 +116,7 @@ export function Controls() {
           </Form>
         </Col>
       </Row>
-      <Row className="mt-4" >
+      <Row className="my-4" >
         <Col>
           <h3 className="control-title">Clear Score History</h3>
           <Button 
