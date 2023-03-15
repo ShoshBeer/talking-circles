@@ -1,8 +1,9 @@
 import React from "react";
-import { Row, Col, Form, Container, Button } from "react-bootstrap";
+import { Row, Col, Form, Container, Button, OverlayTrigger, Popover } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleEasy, toggleMed, toggleHard, changeLanguage, changeNumOfRestrictedWords, changeTimeLimit, selectTimeLimit, selectNumOfRestrictedWords, selectSupportedLanguages, selectLanguage, selectIncludeEasy, selectIncludeHard, selectIncludeMed } from "./ControlSlice";
 import { clearScore, selectPass, selectFail } from "../Game/GameSlice";
+import info from "../../Resources/info.png";
 
 export function Controls() {
   const dispatch = useDispatch();
@@ -49,7 +50,24 @@ export function Controls() {
         <Col md={6}>
           <Form className="mb-3">
             <fieldset>
-              <legend className="control-title">Select at least one word set: </legend>
+              <legend className="control-title">
+                Select at least one word set
+                <OverlayTrigger
+                  trigger="click"
+                  rootClose
+                  placement="auto"
+                  overlay={
+                    <Popover id="word-sets-info">
+                      <ul>
+                        <li><span className="text-success" >Common</span> words appear at least once per 10,000 words</li>
+                        <li><span className="text-warning" >Uncommon</span> words appear at least once per 100,000 words</li>
+                        <li><span className="text-danger" >Rare</span> words appear less than once per 100,000 words.</li>
+                      </ul>
+                    </Popover>
+                  }>
+                  <img src={info} alt="More info" className="info-icon" />
+                </OverlayTrigger> 
+              </legend>
                 {difficultyButtonProperties.map(([difficulty, toggleFn, buttonStyle, isChecked, setDescription]) => {
                   return (<Form.Check 
                             type='checkbox'
