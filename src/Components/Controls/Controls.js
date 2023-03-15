@@ -55,7 +55,7 @@ export function Controls() {
                 <OverlayTrigger
                   trigger="click"
                   rootClose
-                  placement="right"
+                  placement="auto"
                   overlay={
                     <Popover id="word-sets-info">
                       <ul>
