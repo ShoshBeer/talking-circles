@@ -41,7 +41,7 @@ const router = createHashRouter([
     ]
   }
 ], {
-  basename: "/talking-circles",
+  // basename: "/talking-circles",
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
