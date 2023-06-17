@@ -1,5 +1,5 @@
 
-# Talking Circles
+# Talking in Circles - (Play [Here!](https://shoshbeer.github.io/talking-circles/))
 
 ## About
 
@@ -23,6 +23,8 @@ Current supported languages include:
 
 ## How to Play
 
+*The Talking in Circles webpage can be found [here](https://shoshbeer.github.io/talking-circles/).*
+
 In essence, a round is one person getting the other player(s) to say a specific word. A game can consist of any number of rounds. Players may wish to take turns giving clues each round or switch roles after a certain number of rounds. <br>
 
 One round is played like this:
@@ -45,7 +47,9 @@ This work is licensed under a [Creative Commons Attribution Share-Alike 4.0 Inte
 
 ## Data Sources and Citations
 
-Many thanks to the authors of the freely-available data tools that allowed me to build this app!
+Many thanks to the authors of the freely-available data tools that allowed me to build this app! 
+
+Using the following resources, I created [LearningDictionaries](https://github.com/ShoshBeer/LearningDictionaries), a free tool that can be used to create dictionaries in different languages with frequency and related word metadata.
 
 Dictionary data for all languages comes from https://kaikki.org/dictionary/, which includes a list of words and phrases in that language, definitions in English for every sense, and related words for some words.
 
