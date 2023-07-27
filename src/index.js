@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './Utilities/reportWebVitals';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import ErrorPage from './errorPage.jsx';
+import ErrorPage from './Components/ErrorPage.jsx';
 import { Score } from './Components/Score/Score';
 import { Root } from './Navigation/root';
 import { Game } from './Components/Game/Game';
@@ -40,9 +40,7 @@ const router = createHashRouter([
       }
     ]
   }
-], {
-  // basename: "/talking-circles",
-});
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -53,7 +51,4 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

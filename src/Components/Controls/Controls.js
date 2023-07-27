@@ -3,7 +3,7 @@ import { Row, Col, Form, Container, Button, OverlayTrigger, Popover } from "reac
 import { useDispatch, useSelector } from "react-redux";
 import { toggleEasy, toggleMed, toggleHard, changeLanguage, changeNumOfRestrictedWords, changeTimeLimit, selectTimeLimit, selectNumOfRestrictedWords, selectSupportedLanguages, selectLanguage, selectIncludeEasy, selectIncludeHard, selectIncludeMed } from "./ControlSlice";
 import { clearScore, selectPass, selectFail } from "../Game/GameSlice";
-import info from "../../Resources/info.png";
+import info from "../../assets/info.png";
 
 export function Controls() {
   const dispatch = useDispatch();

@@ -16,7 +16,7 @@ export function Game() {
   const language = useSelector(selectLanguage);
   const timeLimit = Number(useSelector(selectTimeLimit));
 
-  const wordDictionary = require(`../../Resources/${language[1]}_smooth_dict.json`);
+  const wordDictionary = require(`../../assets/${language[1]}_smooth_dict.json`);
 
   const [seconds, setSeconds] = useState(0);
 

@@ -13,7 +13,7 @@ export function WordList() {
   const numberOfWords = useSelector(selectNumOfRestrictedWords);
   const language = useSelector(selectLanguage);
 
-  const wordDictionary = require(`../../Resources/${language[1]}_smooth_dict.json`);
+  const wordDictionary = require(`../../assets/${language[1]}_smooth_dict.json`);
 
   useEffect(() => {
     wordDictionary[targetWord["word"]] && dispatch(addRelatedWords(wordDictionary[targetWord["word"]]["related words"]))
