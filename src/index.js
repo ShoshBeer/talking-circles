@@ -7,10 +7,10 @@ import reportWebVitals from './reportWebVitals';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import ErrorPage from './errorPage.jsx';
 import { Score } from './Components/Score/Score';
-import { Root } from './routes/root';
+import { Root } from './Navigation/root';
 import { Game } from './Components/Game/Game';
 import { Controls } from './Components/Controls/Controls';
-import { Instructions } from './routes/Instructions';
+import { Instructions } from './Navigation/Instructions';
 
 const router = createHashRouter([
   {
