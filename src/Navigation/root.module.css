@@ -13,42 +13,6 @@ body {
   flex-direction: column;
 }
 
-.content {
-  flex: 1 0 auto;
-}
-
-h1 {
-  font-weight: bold;
-}
-
-.info-icon {
-  height: 12px;
-  cursor: pointer;
-  margin: 0 0 8px 8px;
-}
-
-#word-sets-info ul {
-  margin: 1rem 0;
-}
-
-.footer {
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.license {
-  color: #61dafb;
-  background: #282c34;
-  display: flex;
-  padding: 0;
-  justify-content: space-between;
-}
-
-.license a {
-  color: #fff;
-  border: #27c0eb;
-}
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -91,60 +55,9 @@ nav a:hover {
   margin: auto;
 }
 
-h2 {
-  font-weight: 600;
-}
-
-.word-change {
-  margin: 0 5px;
-}
-
-.instructions {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
-.flex {
-  display: flex;
-}
-
 .label-width {
   flex-basis: 100%;
   padding-top: 4px;
-}
-
-.bold {
-  font-weight: 700;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.score {
-  font-size: 1.25rem;
-}
-
-.control-title {
-  font-size: 1.6rem;
-  line-height: 38px;
-  font-weight: 400;
-}
-
-.scroll {
-  max-height: 250px;
-  overflow-y: auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1rem;
-}
-
-.scroll li {
-  list-style: none;
-  padding-bottom: inherit;
-}
-
-.popover {
-  max-width: 350px;
 }
 
 .menu {
@@ -159,7 +72,6 @@ h2 {
 
 .menu-icon {
   cursor: pointer;
-  /* display: inline-block; */
   float: right;
   padding: 28px 20px;
   position: relative;

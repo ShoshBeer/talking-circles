@@ -4,6 +4,7 @@ import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, selectWordDiffi
 import { newTargetWord, addPass, addFail, selectTargetWord } from "./GameSlice";
 import { useCallback, useEffect, useState } from "react";
 import { WordList } from "../WordList/WordList";
+import styles from './Game.module.css';
 
 
 export function Game() {
@@ -84,17 +85,17 @@ export function Game() {
         <Col xs={12} sm={6}>
           <Button 
             disabled={missingDifficultySelection}
-            className="word-change" 
+            className={styles['word-change']} 
             onClick={handleMiss} 
             variant="outline-danger">Miss</Button>
           <Button 
             disabled={missingDifficultySelection}
-            className="word-change" 
-            onClick={handleNewWord} 
+            className={styles['word-change']} 
+            onClick={handleNewWord}
             variant="outline-secondary">Skip Word</Button>
           <Button
             disabled={missingDifficultySelection} 
-            className="word-change" 
+            className={styles['word-change']} 
             onClick={handleHit} 
             variant="outline-success">Hit</Button>
         </Col>

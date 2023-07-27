@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleEasy, toggleMed, toggleHard, changeLanguage, changeNumOfRestrictedWords, changeTimeLimit, selectTimeLimit, selectNumOfRestrictedWords, selectSupportedLanguages, selectLanguage, selectIncludeEasy, selectIncludeHard, selectIncludeMed } from "./ControlSlice";
 import { clearScore, selectPass, selectFail } from "../Game/GameSlice";
 import info from "../../assets/info.png";
+import styles from "./Controls.module.css";
 
 export function Controls() {
   const dispatch = useDispatch();
@@ -50,14 +51,15 @@ export function Controls() {
         <Col md={6}>
           <Form className="mb-3">
             <fieldset>
-              <legend className="control-title">
+              <legend className={styles['control-title']}>
                 Select at least one word set
                 <OverlayTrigger
-                  trigger="click"
+                  trigger={["focus", "click"]}
+                  // --> Must click twice or hold down mouse to see tooltip. Potential fix described here: https://stackoverflow.com/questions/73119075/input-doesnt-get-focus-on-it-when-button-is-clicked
                   rootClose
                   placement="auto"
                   overlay={
-                    <Popover id="word-sets-info">
+                    <Popover id={styles['word-sets-info']}>
                       <ul>
                         <li><span className="text-success" >Common</span> words appear at least once per 10,000 words</li>
                         <li><span className="text-warning" >Uncommon</span> words appear at least once per 100,000 words</li>
@@ -65,7 +67,7 @@ export function Controls() {
                       </ul>
                     </Popover>
                   }>
-                  <img src={info} alt="More info" className="info-icon" />
+                  <img src={info} alt="More info" className={styles['info-icon']} tabIndex={0} />
                 </OverlayTrigger> 
               </legend>
                 {difficultyButtonProperties.map(([difficulty, toggleFn, buttonStyle, isChecked, setDescription]) => {
@@ -85,7 +87,7 @@ export function Controls() {
           </Form>
         </Col>
         <Col md={6}>
-          <h3 className="control-title">How many restricted words?</h3>
+          <h3 className={styles['control-title']}>How many restricted words?</h3>
           <Row className="pt-1">
             <Col>
               <label htmlFor="easier" className="float-left">Easier</label>
@@ -98,14 +100,14 @@ export function Controls() {
                 className="mx-3"
               />
               <label htmlFor="" className="float-right">Harder</label>
-              <p className="pt-1 bold">{numOfRestrictedWords} {displayNumOfRestrictedWords}</p>
+              <p className="pt-1 fw-bold">{numOfRestrictedWords} {displayNumOfRestrictedWords}</p>
             </Col>
           </Row>
         </Col>
       </Row>
       <Row className="mt-4" >
         <Col md={6}>
-          <h3 className="control-title">Choose a language</h3>
+          <h3 className={styles['control-title']}>Choose a language</h3>
           <Form.Select defaultValue={currentLanguage[0]} aria-label="language-selector" onChange={e => dispatch(changeLanguage(e.target.value))}>
             {Object.keys(supportedLanguages).map(language => {
               return (<option key={language} value={language}>{language}</option>
@@ -114,7 +116,7 @@ export function Controls() {
           </Form.Select>
         </Col>
         <Col>
-          <h3 className="control-title mt-4">Choose a time limit</h3>
+          <h3 className={`${styles['control-title']} mt-4`}>Choose a time limit</h3>
           <Form>
             {timeLimitOptions.map(option => {
               return (
@@ -136,7 +138,7 @@ export function Controls() {
       </Row>
       <Row className="my-4" >
         <Col>
-          <h3 className="control-title">Clear Score History</h3>
+          <h3 className={styles['control-title']}>Clear Score History</h3>
           <Button 
             disabled={pass.length === 0 && fail.length === 0 ? true : false} 
             variant="outline-danger" 
