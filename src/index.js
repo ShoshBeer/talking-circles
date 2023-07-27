@@ -5,7 +5,7 @@ import { store } from './reduxStore/store';
 import './index.css';
 import reportWebVitals from './Utilities/reportWebVitals';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import ErrorPage from './Components/ErrorPage.jsx';
+import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import { Score } from './Components/Score/Score';
 import { Root } from './Navigation/root';
 import { Game } from './Components/Game/Game';
