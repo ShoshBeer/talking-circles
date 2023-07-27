@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { store } from './store';
+import { store } from './reduxStore/store';
 import './index.css';
 import reportWebVitals from './Utilities/reportWebVitals';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
