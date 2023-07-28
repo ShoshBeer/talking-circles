@@ -10,7 +10,6 @@ import { Root } from './Navigation/root';
 import { Game } from './Components/Game/Game';
 import { Controls } from './Components/Controls/Controls';
 import { Instructions } from './Components/Instructions/Instructions';
-import './index.css';
 
 const router = createHashRouter([
   {
