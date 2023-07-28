@@ -1,16 +1,5 @@
-* {
-  padding: 0;
-  margin: 0;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  font-family: 'Courier New', Courier, monospace;
-  display: flex;
-  flex-direction: column;
+.loading {
+  display: none;
 }
 
 nav {
