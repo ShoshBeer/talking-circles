@@ -1,14 +1,13 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import { NavLink, Outlet } from 'react-router-dom'
 import styles from './root.module.css'
+import { useState } from 'react'
 
 export function Root () {
-  const hideMenu = () => {
-    const menuOpen = document.getElementById('menu-btn').checked
+  const [check, setCheck] = useState(false)
 
-    if (menuOpen) {
-      document.getElementById('menu-btn').checked = false
-    }
+  const hideMenu = () => {
+    setCheck(!check);
   }
 
   return (
@@ -17,7 +16,13 @@ export function Root () {
         <Col>
           <nav>
             <h1 className='fw-bold'>Talking in Circles</h1>
-            <input className={styles['menu-btn']} type='checkbox' id='menu-btn' />
+            <input 
+              className={styles['menu-btn']} 
+              type='checkbox' 
+              id='menu-btn' 
+              checked={check}
+              onChange={() => hideMenu()}
+            />
             <label className={styles['menu-icon']} htmlFor='menu-btn'><span className={styles.navicon} /></label>
             <ul className={styles.menu}>
               <li onClick={() => hideMenu()}><NavLink to='/'>Instructions</NavLink></li>

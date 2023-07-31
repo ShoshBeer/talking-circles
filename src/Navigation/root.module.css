@@ -25,7 +25,7 @@ nav a:hover {
   font-weight: bolder;
 }
 
-.active {
+:global(.active) {
   border-bottom: solid 1px #61dafb;
 }
 
