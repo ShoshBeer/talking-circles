@@ -4,6 +4,7 @@ import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, selectWordDiffi
 import { newTargetWord, addPass, addFail, selectTargetWord } from './GameSlice'
 import { useEffect, useState } from 'react'
 import { WordList } from '../WordList/WordList'
+import { RollNewWord } from '../Helpers/RollNewWord'
 import styles from './Game.module.css'
 
 export function Game () {
@@ -21,27 +22,9 @@ export function Game () {
   const [seconds, setSeconds] = useState(0)
 
   const handleNewWord = () => {
-    // difficulty would relate to both length/rarity, but also to concrete vs abstract concepts
-    const keys = []
-    for (const key in wordDictionary) {
-      if (includeEasy && wordDictionary[key].frequency < 0.00126 && wordDictionary[key].frequency >= 0.0001) {
-        keys.push(key)
-      } else if (includeMed && wordDictionary[key].frequency < 0.0001 && wordDictionary[key].frequency >= 0.00001) {
-        keys.push(key)
-      } else if (includeHard && wordDictionary[key].frequency < 0.00001) {
-        keys.push(key)
-      }
-    }
-    const chosenWord = wordDictionary[keys[Math.floor(Math.random() * keys.length)]]
-
-    if (chosenWord.frequency >= 0.0001) {
-      dispatch(setWordDifficulty('text-success'))
-    } else if (chosenWord.frequency >= 0.00001) {
-      dispatch(setWordDifficulty('text-warning'))
-    } else {
-      dispatch(setWordDifficulty('text-danger'))
-    }
-    dispatch(newTargetWord(chosenWord))
+    const newWord = RollNewWord(wordDictionary, includeEasy, includeMed, includeHard)
+    dispatch(setWordDifficulty(newWord[1]))
+    dispatch(newTargetWord(newWord[0]))
   }
 
   const handleHit = () => {
@@ -74,32 +57,19 @@ export function Game () {
 
   const missingDifficultySelection = !(includeEasy || includeMed || includeHard)
 
+  const buttonOptions = [
+    [handleMiss, 'danger', 'Miss'], 
+    [handleNewWord, 'secondary', 'Skip'], 
+    [handleHit, 'success', 'Hit']
+  ]
+
   return (
     <Container className='my-4'>
       <Row>
         <Col />
         <Col xs={12} sm={6}>
-          <Button
-            disabled={missingDifficultySelection}
-            className={styles['word-change']}
-            onClick={handleMiss}
-            variant='outline-danger'
-          >Miss
-          </Button>
-          <Button
-            disabled={missingDifficultySelection}
-            className={styles['word-change']}
-            onClick={handleNewWord}
-            variant='outline-secondary'
-          >Skip Word
-          </Button>
-          <Button
-            disabled={missingDifficultySelection}
-            className={styles['word-change']}
-            onClick={handleHit}
-            variant='outline-success'
-          >Hit
-          </Button>
+          {buttonOptions.map(([action, colour, label]) => <Button disabled={missingDifficultySelection} className={styles['word-change']} onClick={action} variant={`outline-${colour}`}>{label}</Button>)
+          }
         </Col>
         <Col>
           <h4>Time: </h4>

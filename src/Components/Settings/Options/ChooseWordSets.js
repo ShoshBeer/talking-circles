@@ -61,7 +61,7 @@ export function ChooseWordSets () {
                 label={`${setDescription}`}
                 onChange={() => dispatch(toggleFn())}
                 checked={isChecked}
-                className={`text-${buttonStyle} label-width bold`}
+                className={`text-${buttonStyle} label-width fw-bold`}
                 disabled={disableButton(difficulty)}
                 inline
                 key={difficulty}
