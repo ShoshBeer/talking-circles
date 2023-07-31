@@ -10,6 +10,10 @@ nav {
   background: #282c34;
 }
 
+.navBar {
+  padding: 0;
+}
+
 .menu li {
   padding-left: 1rem;
 }

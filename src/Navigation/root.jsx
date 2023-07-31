@@ -13,7 +13,7 @@ export function Root () {
   return (
     <Container className='text-center'>
       <Row>
-        <Col>
+        <Col className={styles.navBar}>
           <nav>
             <h1 className='fw-bold'>Talking in Circles</h1>
             <input 
