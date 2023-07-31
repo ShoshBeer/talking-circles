@@ -43,5 +43,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://ShoshBeer.github.io/talking-circles"
+  "homepage": "https://ShoshBeer.github.io/talking-circles",
+  "devDependencies": {
+    "standard": "^17.1.0"
+  }
 }
