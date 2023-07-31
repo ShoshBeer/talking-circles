@@ -1,0 +1,14 @@
+.instructions {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.nav-style {
+  color: hsl(193, 83%, 44%);
+  text-decoration: none;
+}
+
+.nav-style:hover {
+  text-decoration: underline;
+  color: hsl(193, 84%, 44%);
+}

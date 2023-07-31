@@ -1,0 +1,19 @@
+#target-definition {
+  max-width: 350px;
+}
+
+.scroll {
+  max-height: 250px;
+  overflow-y: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+}
+
+.scroll li {
+  list-style: none;
+  padding-bottom: inherit;
+}
+
+.pointer {
+  cursor: pointer;
+}

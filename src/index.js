@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { store } from './store';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
+import { store } from './reduxStore/store';
+import reportWebVitals from './Utilities/reportWebVitals';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import ErrorPage from './errorPage.jsx';
+import ErrorPage from './Components/ErrorPage/ErrorPage.jsx';
 import { Score } from './Components/Score/Score';
-import { Root } from './routes/root';
+import { Root } from './Navigation/root';
 import { Game } from './Components/Game/Game';
 import { Controls } from './Components/Controls/Controls';
-import { Instructions } from './routes/Instructions';
+import { Instructions } from './Components/Instructions/Instructions';
 
 const router = createHashRouter([
   {
@@ -19,30 +18,33 @@ const router = createHashRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true,
-        element: <Instructions />,
         errorElement: <ErrorPage />,
-      },
-      {
-        path: "play",
-        element: <Game />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "settings",
-        element: <Controls />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "score",
-        element: <Score />,
-        errorElement: <ErrorPage />,
+        children: [
+          {
+            index: true,
+            element: <Instructions />
+          },
+          {
+            path: "play",
+            element: <Game />
+          },
+          {
+            path: "settings",
+            element: <Controls />
+          },
+          {
+            path: "score",
+            element: <Score />
+          },
+          {
+            path: "*",
+            element: <ErrorPage />
+          }
+        ]
       }
     ]
   }
-], {
-  // basename: "/talking-circles",
-});
+]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -53,7 +55,4 @@ root.render(
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

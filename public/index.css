@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 10%;
+}
+
+.loading h1 {
+  color: hsl(193, 95%, 50%);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.loading p {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+}
+
+.footer {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.license {
+  color: #61dafb;
+  background: #282c34;
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.license a {
+  color: #fff;
+  border: #27c0eb;
+}
