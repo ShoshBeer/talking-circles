@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/talking-circles/static/css/main.4394c3db.css",
-    "main.js": "/talking-circles/static/js/main.9bb2fa6b.js",
+    "main.css": "/talking-circles/static/css/main.3556b796.css",
+    "main.js": "/talking-circles/static/js/main.68a499b0.js",
     "static/js/787.1cfd2630.chunk.js": "/talking-circles/static/js/787.1cfd2630.chunk.js",
     "static/media/info.png": "/talking-circles/static/media/info.90a73b1660d3b2f6040c.png",
     "index.html": "/talking-circles/index.html",
-    "main.4394c3db.css.map": "/talking-circles/static/css/main.4394c3db.css.map",
-    "main.9bb2fa6b.js.map": "/talking-circles/static/js/main.9bb2fa6b.js.map",
+    "main.3556b796.css.map": "/talking-circles/static/css/main.3556b796.css.map",
+    "main.68a499b0.js.map": "/talking-circles/static/js/main.68a499b0.js.map",
     "787.1cfd2630.chunk.js.map": "/talking-circles/static/js/787.1cfd2630.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4394c3db.css",
-    "static/js/main.9bb2fa6b.js"
+    "static/css/main.3556b796.css",
+    "static/js/main.68a499b0.js"
   ]
 }
