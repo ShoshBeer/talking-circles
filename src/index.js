@@ -7,8 +7,8 @@ import { createHashRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from './Components/ErrorPage/ErrorPage.jsx'
 import { Score } from './Components/Score/Score'
 import { Root } from './Navigation/root'
-import { Game } from './Components/Game/Game'
-import { Controls } from './Components/Controls/Controls'
+import { Game } from './Components/Play/Game/Game'
+import { Controls } from './Components/Settings/Controls'
 import { Instructions } from './Components/Instructions/Instructions'
 
 const router = createHashRouter([

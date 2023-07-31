@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { selectFail, selectPass } from '../Game/GameSlice'
+import { selectFail, selectPass } from '../Play/Game/GameSlice'
 import { Row, Col } from 'react-bootstrap'
 import styles from './Score.module.css'
 

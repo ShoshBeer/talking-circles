@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col, Form, Container, Button, OverlayTrigger, Popover } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleEasy, toggleMed, toggleHard, changeLanguage, changeNumOfRestrictedWords, changeTimeLimit, selectTimeLimit, selectNumOfRestrictedWords, selectSupportedLanguages, selectLanguage, selectIncludeEasy, selectIncludeHard, selectIncludeMed } from './ControlSlice'
-import { clearScore, selectPass, selectFail } from '../Game/GameSlice'
+import { clearScore, selectPass, selectFail } from '../Play/Game/GameSlice'
 import info from '../../assets/info.png'
 import styles from './Controls.module.css'
 

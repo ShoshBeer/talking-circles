@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import { Accordion, Card, OverlayTrigger, Popover } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectNumOfRestrictedWords, selectWordDifficulty, selectLanguage } from '../Controls/ControlSlice'
+import { selectNumOfRestrictedWords, selectWordDifficulty, selectLanguage } from '../../Settings/ControlSlice'
 import { selectTargetWord, selectRelatedWords, addRelatedWords } from '../Game/GameSlice'
 import styles from './WordList.module.css'
 
@@ -14,7 +14,7 @@ export function WordList () {
   const numberOfWords = useSelector(selectNumOfRestrictedWords)
   const language = useSelector(selectLanguage)
 
-  const wordDictionary = require(`../../assets/${language[1]}_smooth_dict.json`)
+  const wordDictionary = require(`../../../assets/${language[1]}_smooth_dict.json`)
 
   useEffect(() => {
     wordDictionary[targetWord.word] && dispatch(addRelatedWords(wordDictionary[targetWord.word]['related words']))

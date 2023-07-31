@@ -1,6 +1,6 @@
 import { Row, Col, Button, Container } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, selectWordDifficulty, selectLanguage, selectTimeLimit, setWordDifficulty } from '../Controls/ControlSlice'
+import { selectIncludeEasy, selectIncludeHard, selectIncludeMed, selectWordDifficulty, selectLanguage, selectTimeLimit, setWordDifficulty } from '../../Settings/ControlSlice'
 import { newTargetWord, addPass, addFail, selectTargetWord } from './GameSlice'
 import { useEffect, useState } from 'react'
 import { WordList } from '../WordList/WordList'
@@ -16,7 +16,7 @@ export function Game () {
   const language = useSelector(selectLanguage)
   const timeLimit = Number(useSelector(selectTimeLimit))
 
-  const wordDictionary = require(`../../assets/${language[1]}_smooth_dict.json`)
+  const wordDictionary = require(`../../../assets/${language[1]}_smooth_dict.json`)
 
   const [seconds, setSeconds] = useState(0)
 
