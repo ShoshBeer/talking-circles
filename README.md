@@ -3,12 +3,12 @@
 
 ## About
 
-This is a game to be played with two or more people to help practise crucial language fluency skills. Specifically: 
+This is a game to be played with two or more people to help practise crucial language fluency skills. Players will take turns speaking to communicate a secret word to the other player(s). Specifically: 
  - Verbal skills are developed by forming sentences and communicating ideas.
  - Listening comprehension is utilized to understand the clues and solve the word.
  - Vocabulary is increased by using new words creatively, which helps cement them in long-term memory.
 
-*Note: The words have not been filtered at this time. There may be offensive and inappropriate words until the next update is released.*
+*Note: Vulgar, derogatory, and offensive words have been filtered out. However, it is still possbile to encounter inappropriate words. If you do, please open an issue and include the word you encountered and the language.*
 
 ## Supported Languages
 
@@ -18,28 +18,23 @@ Current supported languages include:
  - French
  - Spanish
  - Italian
+ - Portuguese
 
  More to come!
 
 ## How to Play
 
-*The Talking in Circles webpage can be found [here](https://shoshbeer.github.io/talking-circles/).*
-
-In essence, a round is one person getting the other player(s) to say a specific word. A game can consist of any number of rounds. Players may wish to take turns giving clues each round or switch roles after a certain number of rounds. <br>
-
-One round is played like this:
-
-1. One player will see a card with a word in their target language at the top. Below the target word will be 0-5 words related to the target word. No one else is allowed to look at this card.
-   - If you don't know a word on the card, you can click the word to see a pop-up definition. 
-2. The clue-giver must speak in the target language to get the other player(s) to figure out the word. 
-   - This can be done by describing the meaning of the word, or providing synonyms, or telling stories where the word might fit. 
-   - The clue giver is not allowed to say the target word or any of the related words in any form.
-3. Once the other player(s) figure out the word and say it out loud, you score the word.
-
-The game settings can be used to select the target language and to adjust the difficulty appropriately. 
- - The target words can be limited based on how common they are by choosing the common, uncommon, and/or rare word sets.
- - The number of related words can be increased to have more restrictions or decreased to have fewer restrictions. 
- - A time limit can be specified for each round, so the word must be scored within that limit or else the point is lost.
+1. One person is designated to be the first clue-giver.
+2. The clue giver [opens the game](https://shoshbeer.github.io/talking-circles/) on a device. The players may [adjust the settings](https://shoshbeer.github.io/talking-circles/#/settings) to their desired language and difficulty level.
+3. Without letting other players see the screen, the clue giver will navigate to the [Play](https://shoshbeer.github.io/talking-circles/#/play) tab and the game begins!
+4. Play rounds for a set amount of time or a set number of rounds. One round is played like so:
+   - The clue giver will see a card with the target word at the top and 0-5 related words below. If the clue giver doesn't know a word on the card, they can click the word to see its definition. 
+   - The clue-giver must speak in the selected language to get the other players to figure out the target word. 
+     - This can be done by describing the meaning of the word, or providing synonyms, or telling stories where the word might fit. Be creative!
+     - The clue giver is not allowed to say the target word or any of the related words in any form.
+   - Once the other players figure out the word and say it out loud, the clue giver scores the word.
+5. Choose someone else to be the clue giver and play some more!
+   - You can pass the same device to the next clue giver, or use separate devices to track individual scores.
 
 ## License
 

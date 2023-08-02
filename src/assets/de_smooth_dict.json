@@ -7204,10 +7204,6 @@
           ],
           [
             "noun",
-            "(grammar) case (kind of inflection of a nominal)"
-          ],
-          [
-            "noun",
             "(nautical) halyard"
           ]
         ]
@@ -11683,10 +11679,6 @@
           [
             "noun",
             "broth"
-          ],
-          [
-            "noun",
-            "(derogatory) polluted water or liquid"
           ]
         ]
       ],
@@ -11949,10 +11941,6 @@
           [
             "noun",
             "a young rascal"
-          ],
-          [
-            "noun",
-            "(derogatory or endearing) a knave, a boy"
           ]
         ]
       ],
@@ -15634,10 +15622,6 @@
         "Boss",
         1.45e-05,
         [
-          [
-            "noun",
-            "(usually informal or derogatory) boss (person in charge, supervisor)"
-          ],
           [
             "noun",
             "(video games) boss"
@@ -20706,6 +20690,10 @@
           [
             "verb",
             "(ditransitive) to tell, to narrate, to recount (for example a story, to someone)"
+          ],
+          [
+            "verb",
+            "(somewhat informal, perhaps regional) to talk a lot; to tell nonsense; to gabble"
           ]
         ]
       ],
@@ -45246,10 +45234,6 @@
           [
             "verb",
             "to bang, to pop"
-          ],
-          [
-            "verb",
-            "(vulgar) to fuck"
           ]
         ]
       ],
@@ -45819,6 +45803,10 @@
           [
             "noun",
             "(rail transport) railway/railroad or rail transport"
+          ],
+          [
+            "noun",
+            "A vehicle in rail transport (especially a regional commuter train or tram, otherwise more often Zug or Tram)"
           ],
           [
             "noun",
@@ -48929,6 +48917,17 @@
     "related words": [
       [
         "synonym",
+        "amtlich",
+        3.24e-06,
+        [
+          [
+            "adj",
+            "official; ministerial (of or by a state or regional authority)"
+          ]
+        ]
+      ],
+      [
+        "synonym",
         "formell",
         2.88e-06,
         [
@@ -48978,13 +48977,7 @@
       [
         "synonym",
         "\u00f6ffentlich",
-        5.25e-05,
-        [
-          [
-            "adj",
-            "public"
-          ]
-        ]
+        5.25e-05
       ],
       [
         "synonym",
@@ -85421,10 +85414,6 @@
           [
             "verb",
             "to howl, to whine (make a loud, usually high-pitched sound)"
-          ],
-          [
-            "verb",
-            "(sometimes informal or derogatory) to weep, to cry (see usage notes)"
           ]
         ]
       ],
@@ -100663,6 +100652,10 @@
           ],
           [
             "verb",
+            "(regional) to clean (hemp or flax) of wood residues [auxiliary haben]"
+          ],
+          [
+            "verb",
             "(Switzerland, sports) to wrestle in the Schwingen (Swiss wrestling) style [auxiliary haben]"
           ]
         ]
@@ -102288,10 +102281,6 @@
           [
             "noun",
             "flannel, washcloth"
-          ],
-          [
-            "noun",
-            "(derogatory) pansy, sissy"
           ]
         ]
       ],
@@ -115202,6 +115191,10 @@
           [
             "verb",
             "(transitive, business) to discount, mark down"
+          ],
+          [
+            "verb",
+            "(transitive, regional, Northern Germany)desist, to stop doing something"
           ]
         ]
       ],
@@ -124040,6 +124033,17 @@
       ],
       [
         "synonym",
+        "amtlich",
+        3.24e-06,
+        [
+          [
+            "adj",
+            "official; ministerial (of or by a state or regional authority)"
+          ]
+        ]
+      ],
+      [
+        "synonym",
         "legitim",
         3.72e-06,
         [
@@ -124051,18 +124055,13 @@
       ],
       [
         "synonym",
+        "rechtens",
+        1.95e-06
+      ],
+      [
+        "synonym",
         "rechtlich",
-        1.32e-05,
-        [
-          [
-            "adj",
-            "legal"
-          ],
-          [
-            "adj",
-            "lawful"
-          ]
-        ]
+        1.32e-05
       ],
       [
         "synonym",
@@ -124681,10 +124680,6 @@
           [
             "noun",
             "(higher register) alms"
-          ],
-          [
-            "noun",
-            "(derogatory) pittance"
           ]
         ]
       ],
@@ -129011,10 +129006,6 @@
           [
             "noun",
             "(medicine) case (instance of a specific condition or set of symptoms)"
-          ],
-          [
-            "noun",
-            "(grammar) case (kind of inflection of a nominal)"
           ],
           [
             "noun",
@@ -133539,6 +133530,17 @@
       ],
       [
         "synonym",
+        "amtlich",
+        3.24e-06,
+        [
+          [
+            "adj",
+            "official; ministerial (of or by a state or regional authority)"
+          ]
+        ]
+      ],
+      [
+        "synonym",
         "f\u00f6rmlich",
         6.61e-06,
         [
@@ -133551,13 +133553,7 @@
       [
         "synonym",
         "steif",
-        4.27e-06,
-        [
-          [
-            "adj",
-            "stiff, rigid"
-          ]
-        ]
+        4.27e-06
       ],
       [
         "synonym",
@@ -140339,10 +140335,6 @@
           ],
           [
             "noun",
-            "(derogatory) mouth of a person"
-          ],
-          [
-            "noun",
             "a part of a tool that holds or carries something"
           ]
         ]
@@ -145325,102 +145317,6 @@
         "synonym",
         "vorbringen",
         1.58e-06
-      ]
-    ],
-    "frequency": 8.31763771102671e-06
-  },
-  "kram": {
-    "word": "kram",
-    "definitions": [
-      [
-        "verb",
-        "singular imperative of kramen"
-      ],
-      [
-        "verb",
-        "(colloquial) first-person singular present of kramen"
-      ]
-    ],
-    "related words": [
-      [
-        "synonym",
-        "Dreck",
-        1.91e-05,
-        [
-          [
-            "noun",
-            "dirt"
-          ],
-          [
-            "noun",
-            "filth"
-          ],
-          [
-            "noun",
-            "(Austria) excrement, faeces"
-          ]
-        ]
-      ],
-      [
-        "synonym",
-        "Mist",
-        3.24e-05,
-        [
-          [
-            "noun",
-            "manure (domestic animals\u2019 excrement mixed with hay)"
-          ],
-          [
-            "noun",
-            "(Austria) rubbish, garbage, waste"
-          ]
-        ]
-      ],
-      [
-        "synonym",
-        "Schei\u00dfdreck",
-        2e-06,
-        [
-          [
-            "noun",
-            "(vulgar, chiefly figuratively) crap, shit"
-          ],
-          [
-            "noun",
-            "(vulgar) nothing, jack shit, fuck all"
-          ]
-        ]
-      ],
-      [
-        "synonym",
-        "Schnickschnack",
-        1.17e-06,
-        [
-          [
-            "noun",
-            "bric-a-brac, knick-knack"
-          ],
-          [
-            "noun",
-            "empty talk, chatter"
-          ]
-        ]
-      ],
-      [
-        "synonym",
-        "Schrott",
-        7.24e-06,
-        [
-          [
-            "noun",
-            "(usually uncountable) scrap; junk (discarded material, especially metal)"
-          ]
-        ]
-      ],
-      [
-        "synonym",
-        "Zeugs",
-        3.02e-06
       ]
     ],
     "frequency": 8.31763771102671e-06

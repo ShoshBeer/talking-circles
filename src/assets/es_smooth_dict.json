@@ -26477,10 +26477,6 @@
           [
             "noun",
             "snout (mouth of a beast)"
-          ],
-          [
-            "noun",
-            "(derogatory) a person's mouth"
           ]
         ]
       ],
@@ -32389,10 +32385,6 @@
         "manicomio",
         1.7e-06,
         [
-          [
-            "noun",
-            "(now offensive) insane asylum, lunatic asylum, mental hospital"
-          ],
           [
             "noun",
             "madhouse (all senses)"
@@ -42749,10 +42741,6 @@
           [
             "noun",
             "bristle (stiff or coarse hair)"
-          ],
-          [
-            "noun",
-            "(derogatory) bitch, slut"
           ]
         ]
       ],
@@ -46205,10 +46193,6 @@
           [
             "noun",
             "Diminutive of culo"
-          ],
-          [
-            "noun",
-            "(vulgar, familiar in El Salvador, usually in the singular) remains of a liquid at the bottom of a container"
           ]
         ]
       ],
@@ -64178,14 +64162,6 @@
           [
             "adj",
             "(zoology) in heat, in rut"
-          ],
-          [
-            "adj",
-            "(vulgar) sexy, horny, randy"
-          ],
-          [
-            "noun",
-            "(vulgar) horny, libidinous person"
           ]
         ]
       ],
@@ -65627,14 +65603,6 @@
           [
             "adj",
             "(zoology) in heat, in rut"
-          ],
-          [
-            "adj",
-            "(vulgar) sexy, horny, randy"
-          ],
-          [
-            "noun",
-            "(vulgar) horny, libidinous person"
           ]
         ]
       ],
@@ -68399,10 +68367,6 @@
           [
             "noun",
             "(law) instrument"
-          ],
-          [
-            "noun",
-            "(vulgar) tool (a term for the penis)"
           ]
         ]
       ],
@@ -71548,48 +71512,9 @@
       ],
       [
         "synonym",
-        "chingar",
-        2e-06,
-        [
-          [
-            "verb",
-            "(Mexico, vulgar) to bother, to fuck with"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to engage in sexual intercourse, to fuck"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to be wrong; to screw up, to fuck up"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to steal, to swipe"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to break"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to work"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to eat"
-          ]
-        ]
-      ],
-      [
-        "synonym",
         "follar",
         4.07e-06,
         [
-          [
-            "verb",
-            "(vulgar, Spain, also reflexive) to fuck, to screw, to shag"
-          ],
           [
             "verb",
             "to blow with a bellows"
@@ -71638,7 +71563,13 @@
       [
         "synonym",
         "tirarse",
-        2.19e-06
+        2.19e-06,
+        [
+          [
+            "verb",
+            "infinitive of tirar combined with se"
+          ]
+        ]
       ],
       [
         "synonym",
@@ -80396,14 +80327,6 @@
           [
             "noun",
             "pod"
-          ],
-          [
-            "noun",
-            "(vulgar) foreskin"
-          ],
-          [
-            "noun",
-            "(Spain, vulgar, derogatory) asshole, dick (contemptible person)"
           ]
         ]
       ],
@@ -84466,10 +84389,6 @@
           ],
           [
             "noun",
-            "(figuratively, vulgar, usually in the plural) testicle"
-          ],
-          [
-            "noun",
             "people pleaser, toady"
           ]
         ]
@@ -85391,10 +85310,6 @@
           [
             "verb",
             "to steal"
-          ],
-          [
-            "verb",
-            "(transitive, reflexive, vulgar) to matter"
           ],
           [
             "verb",
@@ -89883,10 +89798,6 @@
           [
             "noun",
             "jacket, piece of clothing worn on the upper body outside a shirt or blouse, often waist length to thigh length"
-          ],
-          [
-            "noun",
-            "(Mexico, vulgar) masturbation"
           ]
         ]
       ],
@@ -91411,14 +91322,6 @@
           [
             "adj",
             "idiotic"
-          ],
-          [
-            "noun",
-            "(derogatory) idiot, moron, fool, dork, eejit"
-          ],
-          [
-            "noun",
-            "(derogatory) dick, jerk, schmuck, douchebag, asshole, ass, jackass, prick (i.e., a cocky or self-important individual without any foundation for it)"
           ]
         ]
       ],
@@ -97889,14 +97792,6 @@
           [
             "noun",
             "a piece of wood, a piece of timber"
-          ],
-          [
-            "noun",
-            "(Spain, derogatory) police officer, compare pig"
-          ],
-          [
-            "noun",
-            "(Spain, derogatory) a clumsy person"
           ]
         ]
       ],
@@ -100542,10 +100437,6 @@
         "follar",
         4.07e-06,
         [
-          [
-            "verb",
-            "(vulgar, Spain, also reflexive) to fuck, to screw, to shag"
-          ],
           [
             "verb",
             "to blow with a bellows"
@@ -103303,14 +103194,6 @@
           [
             "noun",
             "(in the phrase \"en fachas\", Mexico, Central America) clothing that's either in poor condition or not appropriate for some occasion"
-          ],
-          [
-            "adj",
-            "(derogatory, Spain) right-wing"
-          ],
-          [
-            "noun",
-            "(by extension, derogatory, Spain) right-wing person"
           ]
         ]
       ],
@@ -104768,29 +104651,6 @@
           [
             "adj",
             "idiotic"
-          ],
-          [
-            "noun",
-            "(derogatory) idiot, moron, fool, dork, eejit"
-          ],
-          [
-            "noun",
-            "(derogatory) dick, jerk, schmuck, douchebag, asshole, ass, jackass, prick (i.e., a cocky or self-important individual without any foundation for it)"
-          ]
-        ]
-      ],
-      [
-        "synonym",
-        "gilipollas",
-        6.03e-06,
-        [
-          [
-            "adj",
-            "(Spain, vulgar, derogatory) silly, fatheaded"
-          ],
-          [
-            "noun",
-            "(Spain, vulgar, derogatory) dickhead, dumbass, wanker"
           ]
         ]
       ],
@@ -104799,10 +104659,6 @@
         "boludo",
         1.07e-05,
         [
-          [
-            "adj",
-            "(Argentina, Uruguay, Paraguay, Bolivia, vulgar) jackass, moron, immature"
-          ],
           [
             "adj",
             "(El Salvador) wealthy"
@@ -104820,7 +104676,25 @@
       [
         "synonym",
         "cobarde",
-        9.77e-06
+        9.77e-06,
+        [
+          [
+            "adj",
+            "cowardly, craven, gutless, spineless, dastardly"
+          ],
+          [
+            "adj",
+            "yellow (easily frightened)"
+          ],
+          [
+            "noun",
+            "coward, chicken, wimp, poltroon"
+          ],
+          [
+            "noun",
+            "weakling, wuss"
+          ]
+        ]
       ],
       [
         "synonym",
@@ -105694,41 +105568,6 @@
       ],
       [
         "synonym",
-        "chingar",
-        2e-06,
-        [
-          [
-            "verb",
-            "(Mexico, vulgar) to bother, to fuck with"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to engage in sexual intercourse, to fuck"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to be wrong; to screw up, to fuck up"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to steal, to swipe"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to break"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to work"
-          ],
-          [
-            "verb",
-            "(Mexico, vulgar) to eat"
-          ]
-        ]
-      ],
-      [
-        "synonym",
         "ingerir",
         1.23e-06,
         [
@@ -105741,7 +105580,17 @@
       [
         "synonym",
         "refrescar",
-        1.1e-06
+        1.1e-06,
+        [
+          [
+            "verb",
+            "to refresh"
+          ],
+          [
+            "verb",
+            "to jog (stimulate a person's memory)"
+          ]
+        ]
       ],
       [
         "synonym",
@@ -108858,10 +108707,6 @@
           [
             "adj",
             "cursed; damned"
-          ],
-          [
-            "noun",
-            "(derogatory, vulgar) bastard, son of a bitch"
           ]
         ]
       ],
@@ -119157,10 +119002,6 @@
           [
             "noun",
             "(law) instrument"
-          ],
-          [
-            "noun",
-            "(vulgar) tool (a term for the penis)"
           ]
         ]
       ],
@@ -127033,10 +126874,6 @@
           ],
           [
             "noun",
-            "(derogatory) a crazy person; a madman"
-          ],
-          [
-            "noun",
             "a highly affected homosexual; fruit"
           ],
           [
@@ -128052,10 +127889,6 @@
           [
             "adj",
             "cursed; damned"
-          ],
-          [
-            "noun",
-            "(derogatory, vulgar) bastard, son of a bitch"
           ]
         ]
       ],
@@ -131417,14 +131250,6 @@
           [
             "noun",
             "sunrise"
-          ],
-          [
-            "noun",
-            "(vulgar, vesre, Chile, Argentina, Uruguay) arse, anus"
-          ],
-          [
-            "noun",
-            "(vulgar, vesre, Argentina) arse, buttocks"
           ]
         ]
       ]
@@ -132093,10 +131918,6 @@
           ],
           [
             "noun",
-            "(figuratively, vulgar, usually in the plural) testicle"
-          ],
-          [
-            "noun",
             "people pleaser, toady"
           ]
         ]
@@ -132648,10 +132469,6 @@
           [
             "adj",
             "hollow"
-          ],
-          [
-            "adj",
-            "(Guatemala, derogatory) homosexual man"
           ],
           [
             "noun",
@@ -139483,10 +139300,6 @@
           [
             "noun",
             "dagger"
-          ],
-          [
-            "noun",
-            "(Mexico, derogatory) a gay man; faggot"
           ]
         ]
       ],
@@ -156192,10 +156005,6 @@
         [
           [
             "noun",
-            "(derogatory, vulgar) homosexual man, queer, faggot, fairy, effeminate man or boy, sissy"
-          ],
-          [
-            "noun",
             "coward"
           ],
           [
@@ -156235,18 +156044,6 @@
         "marica",
         4.07e-06,
         [
-          [
-            "noun",
-            "(informal, derogatory) poof; fag; faggot (homosexual man)"
-          ],
-          [
-            "noun",
-            "(informal, derogatory) wimp, weakling"
-          ],
-          [
-            "noun",
-            "(informal, derogatory) effeminate man"
-          ],
           [
             "noun",
             "magpie"
@@ -159373,16 +159170,8 @@
             "lifted, raised up"
           ],
           [
-            "adj",
-            "(vulgar, Argentina, Uruguay) erect, stiff, having a boner"
-          ],
-          [
             "noun",
             "(architecture) elevation, elevated part of the fa\u00e7ade (of a building)"
-          ],
-          [
-            "noun",
-            "(vulgar, Argentina, Uruguay) a boner"
           ]
         ]
       ],
@@ -165868,18 +165657,6 @@
         [
           [
             "noun",
-            "(informal, derogatory) poof; fag; faggot (homosexual man)"
-          ],
-          [
-            "noun",
-            "(informal, derogatory) wimp, weakling"
-          ],
-          [
-            "noun",
-            "(informal, derogatory) effeminate man"
-          ],
-          [
-            "noun",
             "magpie"
           ]
         ]
@@ -165902,38 +165679,11 @@
         [
           [
             "noun",
-            "(derogatory, vulgar) homosexual man, queer, faggot, fairy, effeminate man or boy, sissy"
-          ],
-          [
-            "noun",
             "coward"
           ],
           [
             "noun",
             "(Chile) asshole, coward, irresponsible husband or father (mean or rude person)"
-          ]
-        ]
-      ],
-      [
-        "synonym",
-        "puto",
-        2.82e-05,
-        [
-          [
-            "adj",
-            "(vulgar) fucking, goddamn"
-          ],
-          [
-            "noun",
-            "(vulgar) man-whore"
-          ],
-          [
-            "noun",
-            "(vulgar, derogatory) faggot"
-          ],
-          [
-            "noun",
-            "(vulgar, derogatory) asshole, fucker, motherfucker"
           ]
         ]
       ],
@@ -165959,7 +165709,13 @@
       [
         "synonym",
         "cisne",
-        2.4e-06
+        2.4e-06,
+        [
+          [
+            "noun",
+            "swan"
+          ]
+        ]
       ],
       [
         "synonym",
@@ -172032,10 +171788,6 @@
           [
             "noun",
             "(collective) mob (rude or vulgar group of people)"
-          ],
-          [
-            "noun",
-            "(derogatory, Argentina, Bolivia, Venezuela) gossip (a person who gossips)"
           ]
         ]
       ],
@@ -172051,10 +171803,6 @@
           [
             "noun",
             "gang (number of friends or persons associated for a particular purpose)"
-          ],
-          [
-            "noun",
-            "(derogatory) gang (group of criminals or alleged criminals)"
           ],
           [
             "noun",
@@ -179781,14 +179529,6 @@
           [
             "adj",
             "idiotic"
-          ],
-          [
-            "noun",
-            "(derogatory) idiot, moron, fool, dork, eejit"
-          ],
-          [
-            "noun",
-            "(derogatory) dick, jerk, schmuck, douchebag, asshole, ass, jackass, prick (i.e., a cocky or self-important individual without any foundation for it)"
           ]
         ]
       ],
@@ -184053,10 +183793,6 @@
           [
             "verb",
             "to sweat"
-          ],
-          [
-            "verb",
-            "(transitive, reflexive, vulgar, Spain) to not care"
           ]
         ]
       ],
@@ -186731,17 +186467,6 @@
       ],
       [
         "synonym",
-        "co\u00f1o",
-        2.57e-05,
-        [
-          [
-            "noun",
-            "(Venezuela, Maracaibo, vulgar) Guy, dude, bastard"
-          ]
-        ]
-      ],
-      [
-        "synonym",
         "canalla",
         2.29e-06,
         [
@@ -186765,7 +186490,13 @@
       [
         "synonym",
         "insecto",
-        3.63e-06
+        3.63e-06,
+        [
+          [
+            "noun",
+            "insect"
+          ]
+        ]
       ],
       [
         "synonym",
