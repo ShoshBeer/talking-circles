@@ -10,6 +10,10 @@ nav {
   background: #282c34;
 }
 
+.navBar {
+  padding: 0;
+}
+
 .menu li {
   padding-left: 1rem;
 }
@@ -25,7 +29,7 @@ nav a:hover {
   font-weight: bolder;
 }
 
-.active {
+:global(.active) {
   border-bottom: solid 1px #61dafb;
 }
 
