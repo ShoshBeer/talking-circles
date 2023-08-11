@@ -46,6 +46,10 @@ body {
   justify-content: space-between;
 }
 
+.ccText {
+  padding-left: 0.5rem;
+}
+
 .license a {
   color: #fff;
   border: #27c0eb;
